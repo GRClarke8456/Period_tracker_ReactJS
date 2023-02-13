@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://img.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_107791-7397.jpg?w=1800&t=st=1676300994~exp=1676301594~hmac=7ce14eb2ec3caaf16dc82db7c36ac4d1912cac9ad4c10ba352b15f8d3b9bf2bb);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* MODAL */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modalContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  color: black;
+  position: fixed;
+  transform: translateX(-750px);
+  z-index: 1000;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.5s
+}
+
+.modalContainerSignup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  color: black;
+  position: fixed;
+  transform: translateX(-913px);
+  z-index: 1000;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.5s
+}
+
+input[type="submit"] {
+  padding: 12px 20px;
+  margin-top: 20px;
+  background-color: #020202;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="submit"]:hover {
+  background-color: #181818;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@-webkit-keyframes animatetop {
+  from {top:-200px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-100px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+
+.loginText {
+  display: flex;
+  align-items: center;
+}
+
+.login_label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.login_input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 50%;
+}
+
+.okButton {
+  background-color: #5cb85c;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.close {
+  color: black;
+  position: absolute;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#tempname{
+  color: white;
+  /* transform: translateX(1250px); */
+  z-index: 1;
 }
