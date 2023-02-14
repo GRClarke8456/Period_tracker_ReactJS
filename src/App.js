@@ -15,7 +15,7 @@ function App() {
 
     < UserLogin />
     <UserRegistration /> 
-    {/* <ArticleContainer />  */}
+    <ArticleContainer /> 
     </>
   );
 }
