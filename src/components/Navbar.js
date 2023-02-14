@@ -4,6 +4,7 @@ import UserRegistration from "./UserRegistration";
 import ArticleList from "./ArticleList";
 import CycleList from "./CycleList";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import LoginContainer from "../containers/LoginContainer";
 
 
 
@@ -89,7 +90,7 @@ const Navbar = ({postAccount}) => {
                     <li> <Link to="/cycles">Cycles</Link> </li>
         </ul>
         <Routes>
-            <Route path="/login" element={<UserLogin />} />
+            <Route path="/login" element={<LoginContainer />} />
             <Route path="/signup" element={<UserRegistration />} />
             <Route path="/articles" element={<ArticleList />} />
             <Route path="/cycles" element={<CycleList />} />
