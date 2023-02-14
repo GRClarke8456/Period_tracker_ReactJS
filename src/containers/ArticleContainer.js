@@ -13,6 +13,7 @@ const ArticleContainer = () => {
             const response = await fetch(`${SERVER_URL}/articles`)
             const data = await response.json();
             setArticles(data);
+            console.log(data);
         }
         fetchData()
             }, [])
