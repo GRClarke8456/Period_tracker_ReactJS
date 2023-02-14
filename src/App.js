@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import UserLogin from './components/UserLogin';
 import UserRegistration from './components/UserRegistration';
@@ -16,6 +17,9 @@ function App() {
     < UserLogin />
     <UserRegistration /> 
     {/* <ArticleContainer />  */}
+
+
+    <Footer></Footer>
     </>
   );
 }
