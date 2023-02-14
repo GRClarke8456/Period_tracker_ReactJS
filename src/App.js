@@ -20,6 +20,7 @@ function App() {
     <UserRegistration /> 
     {/* <ArticleContainer />  */}
     </UserContext.Provider>
+    <ArticleContainer /> 
     </div>
   );
 }

@@ -94,6 +94,7 @@ const Navbar = ({postAccount}) => {
             <Route path="/signup" element={<UserRegistration />} />
             <Route path="/articles" element={<ArticleList />} />
             <Route path="/cycles" element={<CycleList />} />
+            <Route path="/" element={<ArticleList/>} />
 
         </Routes>
         </div>

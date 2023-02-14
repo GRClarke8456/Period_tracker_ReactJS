@@ -1,4 +1,5 @@
 import { useEffect, useState} from "react";
+import ArticleList from "../components/ArticleList";
 
 const SERVER_URL = "http://localhost:8080"
 
@@ -19,9 +20,11 @@ const ArticleContainer = () => {
             }, [])
 
 
-    // return ( 
-       
-    //  );
+    return ( 
+        <>
+       {articles ? <ArticleList articles={articles}/> : ""}
+       </>
+     );
 }
  
 export default ArticleContainer;
