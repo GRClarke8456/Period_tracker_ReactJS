@@ -50,7 +50,7 @@ const LoginContainer = () => {
         <div className="login">
             {user ? 
             <div>
-                <p> Hello!</p>
+                <p>Hello!</p>
                 <button type="submit" onClick={() => setUser(null)}>Logout</button>
             </div> : (
                 <>
