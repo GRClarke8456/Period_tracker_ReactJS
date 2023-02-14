@@ -1,4 +1,6 @@
 import { useEffect, useState} from "react";
+import ArticleList from "../components/ArticleList";
+import Search from "../components/Search";
 
 const SERVER_URL = "http://localhost:8080"
 
@@ -18,9 +20,12 @@ const ArticleContainer = () => {
             }, [])
 
 
-    // return ( 
-       
-    //  );
+    return ( 
+        <div>
+       <Search/>
+       <ArticleList></ArticleList>
+       </div>
+     );
 }
  
 export default ArticleContainer;
