@@ -4,7 +4,7 @@ import { UserContext } from "../App";
 const CommentForm = ({postNewComment, articleId}) => {
 
     const [text, setText] = useState("");
-    const [datePosted, setDatePosted] = useState(null);
+    const [datePosted, setDatePosted] = useState(new Date());
 
     const [user, setUser] = useContext(UserContext);
 

@@ -1,5 +1,6 @@
 
 import { useState, useEffect, useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../App';
 
 const SERVER_URL = "http://localhost:8080";
@@ -7,12 +8,15 @@ const SERVER_URL = "http://localhost:8080";
 
 const LoginContainer = ({closeModal, setJwt}) => {
 
+    const [user, setUser] = useContext(UserContext);
+
     
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const navigate = useNavigate();
     const loginRequest = () => {
 
         const reqBody = {
@@ -30,11 +34,13 @@ const LoginContainer = ({closeModal, setJwt}) => {
             method : "POST",
             body: JSON.stringify(reqBody),
         })
-        // .then ((response) => response.json())
+        .then ((response) => response.json())
         .then((response) => {
-            if(response.status === 200){
-                window.location.href = "/articles";
-                return response.headers; 
+            if(response.id){
+                closeModal(false)
+                setUser(response)
+                navigate("/articles");
+                 
             }
             else {
                  return Promise.reject("Invalid login attempt");
