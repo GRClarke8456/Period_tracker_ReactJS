@@ -8,17 +8,20 @@ import ArticleList from './components/ArticleList';
 // import backgroundmoon from "./backgroundmoon.avif"; 
 import { createContext } from 'react';
 import { useState } from 'react';
+import { useLocalState } from './util/useLocalStorage';
 
 export const UserContext = createContext(null);
 
 function App() {
 
   const [user, setUser] = useState(null);
+  const[jwt, setJwt] = useLocalState("jwt", "");
+
   return (
     <>
 <link href='https://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet'></link>
 
-    <HomeContainer />
+    <HomeContainer setJwt={setJwt} />
     
     </>
   );

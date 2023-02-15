@@ -6,9 +6,11 @@ import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
 // import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
+import LoginContainer from "./LoginContainer";
 
 
-const HomeContainer = () => {
+
+const HomeContainer = ({setJwt}) => {
     
 // const SERVER_URL = "http://localhost:8080"
 
@@ -124,7 +126,7 @@ const HomeContainer = () => {
                      > Login </li>
                      )}
 
-                    {loginModal && <UserLogin closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
+                    {loginModal && <LoginContainer setJwt={setJwt} closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
 
                     {/* </button> */}
 
@@ -166,6 +168,7 @@ const HomeContainer = () => {
             
 
             </Routes>
+           
 
                
             </div>

@@ -1,108 +1,90 @@
 
-import { useState, useEffect, useContext, useLocalState} from 'react';
+import { useState, useEffect, useContext} from 'react';
 import { UserContext } from '../App';
 
 const SERVER_URL = "http://localhost:8080";
 
 
-const LoginContainer = () => {
+const LoginContainer = ({closeModal, setJwt}) => {
 
-    const[jwt, setJwt] = useLocalState("", "jwt")
+    
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const loginRequest = () => {
 
         const reqBody = {
-            email:email,
-            password:password
+            "email": email,
+            "password": password
         };
+        console.log(JSON.stringify(reqBody));
 
-        fetch("/api/auth/signin", {
+
+        fetch(`${SERVER_URL}/api/auth/signin`, {
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
-            method : "post",
+            credentials: "include",
+            method : "POST",
             body: JSON.stringify(reqBody),
         })
+        // .then ((response) => response.json())
         .then((response) => {
-            if(response.status === 200)
-            return Promise.all([response.json(), response.headers]);
-            else
-                return Promise.reject("Invalid login attempt");
+            if(response.status === 200){
+                window.location.href = "/articles";
+                return response.headers; 
+            }
+            else {
+                 return Promise.reject("Invalid login attempt");
+            }
         })
-        .then(([body, headers]) => {
-            setJwt(headers.get("authorization"));
-            window.location.href = "/articles";
-        })
+       
         .catch((message) => {
-            alert(message);
-        })
+            console.log(message);
+        });
     }
 
-    
-
-    // const [user, setUser] = useContext(UserContext)
-
-    // const [members, setMembers] = useState([])
-
-    // useEffect(() => {
-    //     const fetchData = async() => {
-    //         const response = await fetch(`${SERVER_URL}/api/auth/signin`)
-    //         const data = await response.json();
-    //         setMembers(data);
-    //     }
-    //     fetchData()
-    // }, [])
-
-    // let member;
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     setError("");
-    //     if(members) {
-    //         return members.find(member => {
-    //             return member.email === email;
-    //         })    
-    //     }
-
-    //     if(member) {
-    //         setMembers(member);
-    //     }
-    //     else {
-    //         setError("could not find account");
-    //         setUser(null);
-    //     }
-    // }
 
 
     return ( 
         <div className="login">
-            <div>
-                <label htmlFor="email">Email</label>
-                <input 
-                type="email" 
-                placeholder ="enter email address"
-                value={email}
-                onChange = {(e) => setEmail(e.target.value)} />  
-            </div>
 
-            <div>
-                <label htmlFor="password">Password</label>
-                <input 
-                type="password" 
-                placeholder ="enter password"       
-                value={password}      
-                onChange = {(e) => setPassword(e.target.value)} />
+            <div className="modalContainer">
+                <span onClick={() => closeModal(false)} className="close">&times;  </span>
+                <div className="title">
+                    <h3>Log in here</h3>
+                    <p className="redfont">{error}</p>
+                </div>
+            <ul>
+
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <input 
+                    type="email" 
+                    placeholder ="enter email address"
+                    value={email}
+                    onChange = {(e) => setEmail(e.target.value)} />  
+                </div>
+
+                <div>
+                    <label htmlFor="password">Password</label>
+                    <input 
+                    type="password" 
+                    placeholder ="enter password"       
+                    value={password}      
+                    onChange = {(e) => setPassword(e.target.value)} />
+                </div>
+                
+                <div>
+                    <button id="submit" type="button" onClick={() => loginRequest()}>
+                        Login
+                    </button>
+                </div> 
+
+            </ul>
             </div>
-            
-            <div>
-                <button id="submit" type="button" onClick={() => loginRequest()}>
-                    Login
-                </button>
-            </div> 
         </div>
 
      );
