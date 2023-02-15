@@ -6,6 +6,7 @@ import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
 // import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
+import Navbar from "../components/Navbar";
 
 
 const HomeContainer = () => {

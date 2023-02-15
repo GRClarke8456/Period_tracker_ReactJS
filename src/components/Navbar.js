@@ -44,47 +44,12 @@ const Navbar = ({postAccount}) => {
 
     return ( 
         <>
-        <nav >
-        <div className="navbar">
-        <ul>
-        <button>
-            {ifLoggedOff(
-                
-                 <li className="loginButton"
-                    onClick={() => 
-                        {setLoginModal(true)}}
-                     > Login </li>
-                     )}
-
-                    {loginModal && <UserLogin closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
-
-                    </button>
-                    
-            {ifLoggedOff(
-                <li className="loginButton" 
-                    onClick={() => {setRegistrationModal(true)}}
-                    > Sign Up </li> 
-                    )}
-
-                     {UserRegistration && <UserRegistration closeModal={setRegistrationModal} postAccount={postAccount}/>} 
-
-
-                        {/* {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
-                            )} */}
-                            
-
-            {/* {ifLoggedIn(
-                 <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
-                     )} */}
-            
-            {ifLoggedIn(
-                <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
-                    )}
-               
-        </ul>
-        </div>
-        </nav>
+        
+              
+        
         </>
+
+
      );
 }
  
