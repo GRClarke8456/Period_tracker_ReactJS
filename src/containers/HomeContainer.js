@@ -9,6 +9,7 @@ import Settings from "../components/Settings";
 import LoginContainer from "./LoginContainer";
 
 import Favourites from "../components/Favourites";
+import RegistrationContainer from "./RegistrationContainer";
 
 
 
@@ -150,7 +151,7 @@ const SERVER_URL = "http://localhost:8080"
                     > Sign Up </li> 
                     )}
 
-                     {signupModal && <UserRegistration closeModal={setSignupModal} postAccount={postAccount}/>} 
+                     {signupModal && <RegistrationContainer setJwt={setJwt} closeModal={setSignupModal} postAccount={postAccount}/>} 
 
 
 
