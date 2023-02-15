@@ -41,7 +41,7 @@ const Article = ({article}) => {
 
             {/* </div>  */}
 
-
+        <section>    
             <div className="blog-card spring-fever">
                 <div className="title-content">
                     {/* <h3><a href="#"> <{article.title}></a></h3> */}
