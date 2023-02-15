@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useLayoutEffect } from "react";
+import { useState, useContext, useEffect, useLayoutEffect, useEffect } from "react";
 import { UserContext } from "../App";
 import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
@@ -28,16 +28,26 @@ const SERVER_URL = "http://localhost:8080"
     const [signupModal, setSignupModal] = useState(false);
 
     const [user, setUser] = useContext(UserContext);
-   
+       
 
-    // useEffect(() => {
-    //     const fetchData = async() => {
-    //         const response = await fetch(`${SERVER_URL}/users`)
-    //         const data = await response.json();
-    //         setAllAccounts(data);
-    //     }
-    //     fetchData()
-    //         }, [])
+    useEffect(() => {
+    const fetchData = async() => {
+        const response = await fetch(`${SERVER_URL}/users`)
+        const data = await response.json();
+        setAllAccounts(data);
+    }
+    fetchData()
+        }, [])
+
+    useEffect(() => {
+        const fetchData = async() => {
+            const response = await fetch(`${SERVER_URL}/users`,
+            {credentials: "include"})
+            const data = await response.json();
+            setAllAccounts(data);
+        }
+        fetchData()
+            }, [])
 
 
 
@@ -45,7 +55,8 @@ const SERVER_URL = "http://localhost:8080"
         const response = await fetch("http://localhost:8080/users", {
             method: "POST",
             headers: {'Content-Type' : 'application/json'},
-            body: JSON.stringify(newAccount)
+            body: JSON.stringify(newAccount),
+            credentials: "include"
         }) 
         const savedAccount = await response.json();
         savedAccount.users = [];
@@ -58,7 +69,8 @@ const SERVER_URL = "http://localhost:8080"
         const response = await fetch(`http://localhost:8080/users/${user.id}`, {
             method: "PATCH",
             headers: {'Content-Type' : 'application/json'},
-            body: JSON.stringify(customisedAccount)
+            body: JSON.stringify(customisedAccount),
+            credentials: "include"
         }) 
         const updatedAccount = await response.json();
 
@@ -192,6 +204,9 @@ const SERVER_URL = "http://localhost:8080"
                     }
                     />
             
+            <Route path="/cycles" element={
+                        <CycleContainer/>}
+                    />
 
             </Routes>
            
