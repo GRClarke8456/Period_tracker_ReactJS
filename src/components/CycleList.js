@@ -5,8 +5,8 @@ const CycleList = ({cycles}) => {
 
     let CycleComponent;
 
-    if(cycles) {
-        return CycleComponent = cycles.map(cycle => {
+    if(cycles){
+        return CycleComponent = cycles.map((cycle) => {
             return <Cycle key={cycle.id}  cycle={cycle}/>
         })
     }

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import UserLogin from "../components/UserLogin";
 import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
-// import CycleContainer from "./CycleContainer"; 
+import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
 
 
@@ -95,7 +95,7 @@ const HomeContainer = () => {
              <ul>
              {ifLoggedIn(
                 <li className="homeButton">
-                    <Link className="linkbutton" to="/">Cycles</Link>
+                    <Link className="linkbutton" to="/cycles">Cycles</Link>
                 </li>
              )}
 
@@ -163,7 +163,9 @@ const HomeContainer = () => {
             <Route path="/articles" element={
                         <ArticleContainer articles={account.articles}/>}
                     />
-            
+            <Route path="/cycles" element={
+                        <CycleContainer cycles={account.cycles}/>}
+                    />
 
             </Routes>
 

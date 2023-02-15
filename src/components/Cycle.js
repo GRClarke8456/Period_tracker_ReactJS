@@ -4,9 +4,9 @@ const Cycle = ({cycle}) => {
     return ( 
         <div>
             <p>{cycle.startDate}</p>
-            <p>{cycle.emotions}</p>
-            <p>{cycle.symptoms}</p>
-            <p>{cycle.flow}</p>
+            <p>Emotions: {cycle.emotions}</p>
+            <p>Symotoms: {cycle.symptoms}</p>
+            <p>Flow: {cycle.flow}</p>
             <hr/>
 
         </div>
