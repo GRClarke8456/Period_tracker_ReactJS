@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SERVER_URL = "http://localhost:8080";
 
@@ -7,16 +8,18 @@ const RegistrationContainer = ({closeModal}) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [dob, setDob] = useState()
+    const [DOB, setDOB] = useState(new Date)
     const [error, setError] = useState("");
 
-    const loginRequest = () => {
+    const navigate = useNavigate;
+
+    const signUpRequest = () => {
 
         const reqBody = {
             "name": name,
             "email": email,
             "password": password,
-            "dob": dob
+            "DOB": DOB
         };
         console.log(JSON.stringify(reqBody));
 
@@ -25,21 +28,21 @@ const RegistrationContainer = ({closeModal}) => {
             headers: {
                 "Content-Type": "application/json"
             },
+            // mode: "no-cors",
             credentials: "include",
             method : "POST",
             body: JSON.stringify(reqBody),
         })
-        // .then ((response) => response.json())
         .then((response) => {
             if(response.status === 200){
-                window.location.href = "/cycles";
+                {closeModal(false)}
+                navigate("/cycles");
                 return response.headers; 
             }
             else {
-                 return Promise.reject("Invalid login attempt");
+                 return Promise.reject("Invalid sign up attempt");
             }
         })
-       
         .catch((message) => {
             console.log(message);
         });
@@ -91,13 +94,13 @@ const RegistrationContainer = ({closeModal}) => {
                     <input 
                     type="date" 
                     placeholder ="enter your date of birth"
-                    value={dob}
-                    onChange = {(e) => setDob(e.target.value)} />  
+                    value={DOB}
+                    onChange = {(e) => setDOB(e.target.value)} />  
                 </div>
 
                 <div>
-                    <button id="submit" type="button" onClick={() => loginRequest()}>
-                        Login
+                    <button id="submit" type="button" onClick={() => signUpRequest()}>
+                        Sign Up
                     </button>
                 </div> 
 
