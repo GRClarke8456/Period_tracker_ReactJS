@@ -37,14 +37,18 @@ const Cycle = ({cycle}) => {
 
     return ( 
         <div className="cyclePage">
-            <p>Start date:{cycle.startDate}</p>
-            <p>End date:{cycle.lastDate}</p>
+            <div className="cycleInfo">
+            <p className="startDate">Cycle Information:</p>
+            <p>Start date: {cycle.startDate}</p>
+            <p>End date: {cycle.lastDate}</p>
             <p>Emotions: {cycle.emotions}</p>
-            <p>Symotoms: {cycle.symptoms}</p>
+            <p>Symptoms: {cycle.symptoms}</p>
             <p>Flow: {cycle.flow}</p>
             <hr/>
+            </div>
             <div className="calendarBox">
-                <div className="calendar" style={wrapperStyle}>
+                <div className="calendar" >
+                {/* <div className="calendar" style={wrapperStyle}> */}
                 {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
                     <Calendar 
                     
