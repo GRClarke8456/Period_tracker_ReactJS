@@ -1,8 +1,9 @@
 import Cycle from "./Cycle";
 
 
-const CycleList = ({cycles}) => {
 
+const CycleList = ({cycles}) => {
+  
     let CycleComponent;
 
     if(cycles){
@@ -15,6 +16,7 @@ const CycleList = ({cycles}) => {
         <>
         <h2>List of Cycles!</h2>
         {CycleComponent}
+       
         </>
      );
 }
