@@ -1,11 +1,14 @@
 import Article from "./Article";
+import { UserContext } from "../App";
+import { useContext } from "react";
 
 const ArticleList = ({articles}) => {
-    
+
     // let mappedArticles = articles.map((article) => {
     //     return <Article key={article.id} article={article} value={articles} />
     // })
     
+    const [user] = useContext(UserContext);
 
     let ArticleComponent;
     if(articles){

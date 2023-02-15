@@ -1,10 +1,11 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useContext, useEffect, useLayoutEffect } from "react";
+import { UserContext } from "../App";
 import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
 import UserLogin from "../components/UserLogin";
 import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
-// import CycleContainer from "./CycleContainer"; 
+import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
 import LoginContainer from "./LoginContainer";
 
@@ -19,12 +20,14 @@ const HomeContainer = ({setJwt}) => {
 const SERVER_URL = "http://localhost:8080"
 
 
-    const [user, setUser] = useState(false); 
+     
     const [account, setAccount] = useState(false);
     const [allAccounts, setAllAccounts] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
+
+    const [user, setUser] = useContext(UserContext);
    
 
     useEffect(() => {
@@ -109,7 +112,7 @@ const SERVER_URL = "http://localhost:8080"
              <ul>
              {ifLoggedIn(
                 <li className="homeButton">
-                    <Link className="linkbutton" to="/">Cycles</Link>
+                    <Link className="linkbutton" to="/cycles">Cycles</Link>
                 </li>
              )}
 
@@ -179,6 +182,10 @@ const SERVER_URL = "http://localhost:8080"
             <Route path="/articles" element={
                         <ArticleContainer articles={account.articles}/>}
                     />
+            <Route path="/cycles" element={
+                        <CycleContainer cycles={account.cycles}/>}
+                    />
+
 
             <Route path="/favourites" element={
                         <Favourites articles={account.articles}/>
@@ -189,6 +196,7 @@ const SERVER_URL = "http://localhost:8080"
             </Routes>
            
 
+            
                
             </div>
             

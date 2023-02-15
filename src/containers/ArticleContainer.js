@@ -31,7 +31,7 @@ const [articles, setArticles] = useState([]);
 
 
             return (
-    <div className="articleBox">
+    <div className="articleBoxx">
         <div className="articlestitle">
             <h1>Articles</h1>
         </div>
