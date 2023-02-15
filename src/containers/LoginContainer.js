@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useContext, useLocalState} from 'react';
+import { useState, useEffect, useContext} from 'react';
 import { UserContext } from '../App';
 
 const SERVER_URL = "http://localhost:8080";
@@ -7,7 +7,7 @@ const SERVER_URL = "http://localhost:8080";
 
 const LoginContainer = () => {
 
-    const[jwt, setJwt] = useLocalState("", "jwt")
+    const[jwt, setJwt] = useState("", "jwt")
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")

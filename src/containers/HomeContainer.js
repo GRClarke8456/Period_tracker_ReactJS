@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../App";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
 import UserLogin from "../components/UserLogin";
@@ -14,12 +15,14 @@ const HomeContainer = () => {
 // const SERVER_URL = "http://localhost:8080"
 
 
-    const [user, setUser] = useState(false); 
+     
     const [account, setAccount] = useState(false);
     const [allAccounts, setAllAccounts] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
+
+    const [user, setUser] = useContext(UserContext);
    
 
 
