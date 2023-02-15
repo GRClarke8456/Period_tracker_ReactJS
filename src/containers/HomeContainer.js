@@ -1,18 +1,20 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, useLayoutEffect } from "react";
 import { UserContext } from "../App";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
 import UserLogin from "../components/UserLogin";
 import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
 // import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
-import Navbar from "../components/Navbar";
+import Favourites from "../components/Favourites";
+
+
 
 
 const HomeContainer = () => {
     
-// const SERVER_URL = "http://localhost:8080"
+const SERVER_URL = "http://localhost:8080"
 
 
      
@@ -25,6 +27,14 @@ const HomeContainer = () => {
     const [user, setUser] = useContext(UserContext);
    
 
+    useEffect(() => {
+        const fetchData = async() => {
+            const response = await fetch(`${SERVER_URL}/users`)
+            const data = await response.json();
+            setAllAccounts(data);
+        }
+        fetchData()
+            }, [])
 
 
 
@@ -155,7 +165,9 @@ const HomeContainer = () => {
 
                 {/* </button> */}
                 </ul>
-                </div>   
+                </div> 
+        
+
         
             <Routes>
 
@@ -167,12 +179,18 @@ const HomeContainer = () => {
             <Route path="/articles" element={
                         <ArticleContainer articles={account.articles}/>}
                     />
+
+            <Route path="/favourites" element={
+                        <Favourites articles={account.articles}/>
+                    }
+                    />
             
 
             </Routes>
 
                
             </div>
+            
         </BrowserRouter>
 
      );
