@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
 import UserLogin from "../components/UserLogin";
 import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
-// import CycleContainer from "./CycleContainer"; 
+import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
 import Navbar from "../components/Navbar";
 
@@ -21,7 +21,16 @@ const HomeContainer = () => {
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
    
+    const SERVER_URL = "http://localhost:8080"
 
+    useEffect(() => {
+    const fetchData = async() => {
+        const response = await fetch(`${SERVER_URL}/users`)
+        const data = await response.json();
+        setAllAccounts(data);
+    }
+    fetchData()
+        }, [])
 
 
 
@@ -165,6 +174,9 @@ const HomeContainer = () => {
                         <ArticleContainer articles={account.articles}/>}
                     />
             
+            <Route path="/" element={
+                        <CycleContainer/>}
+                    />
 
             </Routes>
 

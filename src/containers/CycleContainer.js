@@ -9,12 +9,13 @@ const CycleContainer = () => {
     const [cycles, setCycles] = useState([]);
     const [allCycles, setAllCycles] = useState([]);
     const [cycle, setCycle] = useState();
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         const fetchData = async() => {
             const response = await fetch(`${SERVER_URL}/cycles`)
             const data = await response.json();
-            setCycles(data);
+            setAllCycles(data);
             console.log(data);
         }
         fetchData()
@@ -29,15 +30,25 @@ const CycleContainer = () => {
             }) 
             const savedCycle = await response.json();
             savedCycle.cycles = [];
-            setCycle([...allCycles, savedCycle])
+            setAllCycles([...allCycles, savedCycle])
             // setIsLoggedIn(true) 
             setCycle(savedCycle);
         };
 
+        const patchCycle = async (cycleId, newCycle) => {
+            const response = await fetch(`${SERVER_URL}/cycles/${cycleId}`, {
+              method: "PATCH",
+              headers: { "Content-Type" : "application/json" },
+              body: JSON.stringify(newCycle),
+            });
+            const updatedCycle = await response.json();
+            setCycle(updatedCycle);
+          };
+          
 
     return (
         <>
-        {/* {cycles ? <CycleList cycles={cycles}/> : ""} */}
+        {cycles ? <CycleList cycles={cycles}/> : ""}
         </>
          
      );
