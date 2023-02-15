@@ -13,29 +13,46 @@ const Cycle = ({cycle}) => {
       border: `1px solid ${token.colorBorderSecondary}`,
       borderRadius: token.borderRadiusLG,
     };
+
+    const monthCellRender = (date) => {
+        if (dayjs(date) > dayjs(cycle.startDate) && dayjs(date) < dayjs(cycle.lastDate)){
+            return (
+            <ul className="periodDay">
+                <li>Period month</li>
+            </ul>
+            )}
+      };
+    
+
+    // calendar period days
+    const dateCellRender= (date) => {
+        if (dayjs(date) > dayjs(cycle.startDate) && dayjs(date) < dayjs(cycle.lastDate)){
+            return (
+            <ul className="periodDay">
+                <li>Period</li>
+            </ul>
+        )}
+    }
+    
+
     return ( 
-        <div>
+        <div className="cyclePage">
             <p>Start date:{cycle.startDate}</p>
             <p>End date:{cycle.lastDate}</p>
             <p>Emotions: {cycle.emotions}</p>
             <p>Symotoms: {cycle.symptoms}</p>
             <p>Flow: {cycle.flow}</p>
             <hr/>
-            
-             <div className="calender" style={wrapperStyle}>
-             {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
-                <Calendar 
-                // onSelect={(date) => {
-                //     console.log("selected date", date);
-                // }}
-                dateCellRender={(date) => {
-                    if (dayjs(date) > dayjs(cycle.startDate) && dayjs(date) < dayjs(cycle.lastDate)){
-                        return <h6>Period</h6>
-                    }
-                }}
-                />
-            </div>  
-            
+            <div className="calendarBox">
+                <div className="calendar" style={wrapperStyle}>
+                {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
+                    <Calendar 
+                    
+                    dateCellRender={dateCellRender} 
+                    monthCellRender={monthCellRender}
+                    />
+                </div>  
+            </div>
 
         </div>
 
