@@ -1,12 +1,13 @@
 import Cycle from "./Cycle";
 
 
-const CycleList = ({cycles}) => {
 
+const CycleList = ({cycles}) => {
+  
     let CycleComponent;
 
-    if(cycles) {
-        return CycleComponent = cycles.map(cycle => {
+    if(cycles){
+        return CycleComponent = cycles.map((cycle) => {
             return <Cycle key={cycle.id}  cycle={cycle}/>
         })
     }
@@ -15,6 +16,7 @@ const CycleList = ({cycles}) => {
         <>
         <h2>List of Cycles!</h2>
         {CycleComponent}
+       
         </>
      );
 }

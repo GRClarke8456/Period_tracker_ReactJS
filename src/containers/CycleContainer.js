@@ -21,23 +21,28 @@ const CycleContainer = () => {
             }, [])
             
 
-        const postCycle = async (newCycle) => {
-            const response = await fetch("http://localhost:8080/cycles", {
-                method: "POST",
-                headers: {'Content-Type' : 'application/json'},
-                body: JSON.stringify(newCycle)
-            }) 
-            const savedCycle = await response.json();
-            savedCycle.cycles = [];
-            setCycle([...allCycles, savedCycle])
-            // setIsLoggedIn(true) 
-            setCycle(savedCycle);
-        };
+        // const postCycle = async (newCycle) => {
+        //     const response = await fetch("http://localhost:8080/cycles", {
+        //         method: "POST",
+        //         headers: {'Content-Type' : 'application/json'},
+        //         body: JSON.stringify(newCycle)
+        //     }) 
+        //     const savedCycle = await response.json();
+        //     savedCycle.cycles = [];
+        //     setCycle([...allCycles, savedCycle])
+        //     // setIsLoggedIn(true) 
+        //     setCycle(savedCycle);
+        // };
 
 
     return (
         <>
-        {/* {cycles ? <CycleList cycles={cycles}/> : ""} */}
+        <div>
+            <h3>Cycle Calender</h3>
+        </div>
+        <section>
+        {cycles ? <CycleList cycles={cycles}/> : ""}
+        </section>
         </>
          
      );

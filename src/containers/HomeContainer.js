@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-do
 import UserLogin from "../components/UserLogin";
 import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
-// import CycleContainer from "./CycleContainer"; 
+import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
 import Favourites from "../components/Favourites";
 
@@ -109,7 +109,7 @@ const SERVER_URL = "http://localhost:8080"
              <ul>
              {ifLoggedIn(
                 <li className="homeButton">
-                    <Link className="linkbutton" to="/">Cycles</Link>
+                    <Link className="linkbutton" to="/cycles">Cycles</Link>
                 </li>
              )}
 
@@ -179,6 +179,10 @@ const SERVER_URL = "http://localhost:8080"
             <Route path="/articles" element={
                         <ArticleContainer articles={account.articles}/>}
                     />
+            <Route path="/cycles" element={
+                        <CycleContainer cycles={account.cycles}/>}
+                    />
+
 
             <Route path="/favourites" element={
                         <Favourites articles={account.articles}/>
@@ -187,7 +191,7 @@ const SERVER_URL = "http://localhost:8080"
             
 
             </Routes>
-
+            
                
             </div>
             
