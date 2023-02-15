@@ -13,7 +13,10 @@ body {
 
 
 /* MODAL */
-
+.modalBackground {
+  width: 200px;
+  height: 200px;
+}
 .modalContainer {
 
   display: flex;

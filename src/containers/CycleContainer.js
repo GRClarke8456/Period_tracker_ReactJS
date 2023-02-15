@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CycleList from "../components/CycleList";
 
-
 const CycleContainer = () => {
 
     const SERVER_URL = "http://localhost:8080"
