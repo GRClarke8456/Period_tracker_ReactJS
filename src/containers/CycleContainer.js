@@ -32,7 +32,8 @@ const CycleContainer = () => {
             savedCycle.cycles = [];
             setAllCycles([...allCycles, savedCycle])
             // setIsLoggedIn(true) 
-            setCycle(savedCycle);
+            setCycle(savedCycle),
+            credentials:"include";
         };
 
         const patchCycle = async (cycleId, newCycle) => {

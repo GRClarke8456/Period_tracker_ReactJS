@@ -174,7 +174,7 @@ const HomeContainer = () => {
                         <ArticleContainer articles={account.articles}/>}
                     />
             
-            <Route path="/" element={
+            <Route path="/cycles" element={
                         <CycleContainer/>}
                     />
 
