@@ -26,6 +26,7 @@ const [articles, setArticles] = useState([]);
     <div className="articleBox">
         <div className="articlestitle">
             <h1>Articles</h1>
+            <hr/>
         </div>
         <section>
             {/* <ArticleList articles={articles} />

@@ -1,5 +1,10 @@
+/* .App {
+  transform: scale(70%);
+} */
 
 body {
+  /* margin-top: -5%; */
+  /* margin-top: -15vh; */
   height: 100vh;
   width: 100%;
   background-image: url(https://media1.giphy.com/media/TpWfdQdAY24aaOM49v/giphy.gif?cid=ecf05e4777lvx81phn27u35jgn8xakrx08zn5ngv964kkzmm&rid=giphy.gif&ct=g);
@@ -7,6 +12,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Zeyada';font-size: 22px;
+  /* transform: scale(85%); */
 }
 
 
@@ -289,7 +295,7 @@ button {
 
 @import url(//fonts.googleapis.com/css?family=Abril+Fatface|Droid+Serif:400,700,400italic,700italic);
 html,body{
-  height:100%
+  /* height:100% */
 }
 body {
   /* background: linear-gradient(to bottom, rgba(0,5,10,0.4) 0%,rgba(0,0,0,0) 100%); */
@@ -307,6 +313,7 @@ body {
   right: 0;  
   left: 0;
   margin: 20px auto;
+  /* margin: -250px 0 0 -175px; */
   overflow: hidden;
   border-radius: 0px;
   box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
@@ -329,7 +336,7 @@ color:#fff;
 }
 .blog-card .color-overlay {
   background: rgba(64, 84, 94,0.5);
-  width: 1200px;
+  width: 1500px;
   height: 500px;
   position: absolute;
   z-index: 10;
@@ -339,7 +346,7 @@ color:#fff;
 }
 .blog-card .gradient-overlay {  
   background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 100%);
-  width: 1200px;
+  width: 1500px;
   height: 200px;
   position: absolute;
 /*   top: 350px; */
@@ -361,13 +368,13 @@ color:#fff;
 }
 .title-content {
   text-align: center;
-/*   margin: 170px 0 0 0; */
+  margin: -30px 0 0 0;
   position: absolute;
   z-index: 20;
   width: 100%;
   top: 0;
   left: 0;
-  transition:all 0.6s
+  /* transition:all 0.6s */
 }
 
 .blog-card:hover h3:after{
@@ -437,7 +444,7 @@ h3:after {
   line-height: 24px;
   z-index: 20;
   opacity: 0;
-  transition: bottom 0.64s, opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 1);
+  transition: bottom 0.64s, opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 0.45);
 }
 
 .card-info a{
@@ -578,140 +585,7 @@ h3:after {
 }
 
 
-/*  ================  */
 
-/* ignore this bit :P */
-#profile-badges:after {
-    content: "BRO";
-    font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-    font-size:13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 1px 4px 1px 4px;
-    color: black !important;
-    border-radius: 3px;
-    position: relative;
-    top: -2px;
-    text-shadow: none !important;
-    white-space: nowrap;
-    letter-spacing: 0;
-    background: #FFDD40;
-}
-.profile-header{ background:#333 url(https://images.unsplash.com/photo-1435783099294-283725c37230?dpr=1&auto=compress,format&fit=crop&w=1376&h=635&q=80&cs=tinysrgb&crop=&bg=) top center no-repeat; background-size:cover; font-size:3em;position:relative}
-.profile-header:after{
-  position:absolute;
-  content:"";
-  display:block;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  background:rgba(23, 23, 31, 0.42);
-  z-index:0
-}
-#profile-links a{
-  font-family: 'Abril Fatface', serif;
-  font-size:1.2em
-}
-
-
-.profile-links a[href*=nodws\.com]:before{
-    content:"\2616";
-    color:#0a45b5;
-    padding-right:3px
-}
-
-.profile-links a[href*=twitter]:before{
-    content:"\1f426";
-    color:#08c
-}
-
-.profile-links a[href*=dribbble]:before{
-    content:"\26BE";
-    color:#d055bf
-}
-#following-this-user{
-  pointer-events:none
-}
-#follow-this-user{
-    font-size:1.2em;
-    border-color:#359ef9
-}
-#follow-this-user:after{
-    content:"\1f448"
-}
-.links-and-stats {
-    background: rgb(20, 20, 21);
-}
-.profile-name h1 {
-   text-shadow:0 6px 9px rgba(0, 0, 0, 0.48)
-}
-.profile-avatar {
-    bottom: -10px;
-    width: 150px;
-    height: 150px;
-    border: 0px solid #1E1E1E;
-    background: rgba(2, 2, 2, 0.49);
-    box-shadow:0 19px 19px -10px rgba(0, 0, 0, 0.63)
-}
-.profile-username, .upsell,.profile-location,.primary-pro{
-  opacity:0;
-}
-.upsell,#pen-as-header-question{
-  display:none
-}
-.profile-nav-1 a{
-  font-size:1.2rem;
-}
-.profile-bio, .profile-nav-1 a.active,.profile-nav-1 a:hover {
-    color: rgba(20, 20, 21, 0.59) !important;
-    font-size: 1.2rem
-}
-.meta .pen-title {
-  font-family: 'Droid Serif', serif;
-  text-align:center
-}
-.pagination-button{
-  background-color:#2f2f31;
-  border-color:#2f2f31;
-  transition:all 0.2s
-}
-.pagination-button:hover{
-  box-shadow:0 3px 8px rgba(0,0,0,0.2)
-}
-.single-project .stats,.single-pen .stats {
-    text-align:center;
-    width:100%
-}
-.stats svg {
-    fill: #bda26b;
-}
-.stats svg, .loves .icon-heart {
-    fill: rgba(47, 47, 49, 0) !important;
-    stroke:#ba6 !important;
-    stroke-width:0.1em !important;
-}
-.loves .icon-heart {
-   stroke-width:0.5em !important;
-}
-.comments svg {
-   stroke-width:0.35em !important;
-}
-.single-stat.loves.loved-1 svg
-{
-    stroke:#fff !important
-}
-
-.single-pen:hover h3:after{
-    width:40%;
-    transition:all 0.2s
-}
-.pen-actions{
-  border:0px !important
-}
-.meta{
-  box-shadow:none !important
-}
 
 
 
