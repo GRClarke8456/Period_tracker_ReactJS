@@ -1,20 +1,39 @@
-const Article = ({article}) => {
-    return ( 
-        <>
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-{/* 
-            <div className="products">
-                <h2>{article.title}</h2>
-                <p>{article.content}</p>
-                <p>{article.date}</p>
-                {/* <p>{article.articleslikes}</p> */}
-                {/* <p>{article.numOfLikes}</p> */}
-                {/* <p>{article.comments}</p> */}
+const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
+    
+    const [likeArticle, setLikeArticle] = useState(false);
+  
+    console.log(articles);
+    const {id} = useParams();
+    
+  
+    useEffect(() => {
+      if (isLoggedIn) {
+        const articleLiked = didTheyLikeTheArticle(id);
+        setLikeArticle(articleLiked);
+      }
+    }, []);
 
-            {/* </div>  */}
-
-
-            <div className="blog-card spring-fever">
+  
+    const didTheyLikeTheArticle = (articleID) => {
+      let check = false;
+      for (const articleLiked of user.articles) {
+        if (articleLiked.id === articleID) {
+          check = true;
+        }
+      }
+      return check;
+    };
+  
+    return (
+      <>
+      <h3>HEY</h3>
+        <section className="products">
+            {articles ? articles.map((article) => {
+                return <>
+                <div className="blog-card spring-fever">
                 <div className="title-content">
                     {/* <h3><a href="#"> <{article.title}></a></h3> */}
 
@@ -38,11 +57,13 @@ const Article = ({article}) => {
                 <div className="gradient-overlay"></div>
                 <div className="color-overlay"></div>
             </div>
+                </>
+            } ) : ""
+            }
+        </section>
+      </>
+    );
+  };
 
-
-        </>
-
-     );
-}
- 
-export default Article;
+  
+  export default Favourites;
