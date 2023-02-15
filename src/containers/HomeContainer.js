@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useLayoutEffect } from "react";
+import { useState, useContext, useEffect, useLayoutEffect, useEffect } from "react";
 import { UserContext } from "../App";
 import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
@@ -28,7 +28,16 @@ const SERVER_URL = "http://localhost:8080"
     const [signupModal, setSignupModal] = useState(false);
 
     const [user, setUser] = useContext(UserContext);
-   
+       
+
+    useEffect(() => {
+    const fetchData = async() => {
+        const response = await fetch(`${SERVER_URL}/users`)
+        const data = await response.json();
+        setAllAccounts(data);
+    }
+    fetchData()
+        }, [])
 
     useEffect(() => {
         const fetchData = async() => {
@@ -195,6 +204,9 @@ const SERVER_URL = "http://localhost:8080"
                     }
                     />
             
+            <Route path="/cycles" element={
+                        <CycleContainer/>}
+                    />
 
             </Routes>
            
