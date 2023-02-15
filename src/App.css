@@ -1,31 +1,63 @@
 
-/* body {
+
+body {
   height: 100vh;
   width: 100%;
-  background-image: url(https://img.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_107791-7397.jpg?w=1800&t=st=1676300994~exp=1676301594~hmac=7ce14eb2ec3caaf16dc82db7c36ac4d1912cac9ad4c10ba352b15f8d3b9bf2bb);
+  background-image: url(https://media1.giphy.com/media/TpWfdQdAY24aaOM49v/giphy.gif?cid=ecf05e4777lvx81phn27u35jgn8xakrx08zn5ngv964kkzmm&rid=giphy.gif&ct=g);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-} */
+  font-family: 'Zeyada';font-size: 22px;
+}
+
+
 
 /* MODAL */
 
 .modalContainer {
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  width: 1000px;
+  height: 650px;
   border-radius: 12px;
-  background-color: white;
+  /* background-color: rgb(234, 31, 31); */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 25px;
   color: black;
   position: fixed;
-  transform: translateX(-750px);
+   transform: translateX(-1000px);
+   z-index: 1000;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.5s 
+}
+
+.modalContainerSignup{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 500px;
+  height: 500px; */
+  width: 1350px;
+  height: 650px;
+  border-radius: 12px;
+  /* background-color: white; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  color: black;
+  position: fixed;
+  transform: translateX(-1350px);
+  /* transform: translateX(-913px); */
   z-index: 1000;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -33,28 +65,6 @@
   animation-duration: 0.5s
 }
 
-.modalContainerSignup{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 500px;
-  height: 500px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-  color: black;
-  position: fixed;
-  transform: translateX(-913px);
-  z-index: 1000;
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.5s
-}
 
 input[type="submit"] {
   padding: 12px 20px;
@@ -70,18 +80,19 @@ input[type="submit"]:hover {
   background-color: #181818;
 }
 
-@-webkit-keyframes animatetop {
+ @-webkit-keyframes animatetop {
   from {top:-200px; opacity:0} 
   to {top:0; opacity:1}
-}
+} 
 
 @keyframes animatetop {
   from {top:-100px; opacity:0}
   to {top:0; opacity:1}
-}
+} 
 
 
 .loginText {
+  font-family: 'Zeyada';font-size: 22px;
   display: flex;
   align-items: center;
 }
@@ -124,10 +135,159 @@ input[type="submit"]:hover {
     color: red;
     text-decoration: none;
     cursor: pointer;
+} 
+
+ /* #tempname{
+  color: white;  */
+  /* transform: translateX(1250px); */
+  /* z-index: 1;
+}  */
+
+button {
+  
+  background: rgb(0, 0, 0);
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid rgb(0,0,0);
+  color: white;
+  cursor: pointer;
+  position:relative;
+  overflow: hidden;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  margin-top: auto;
+  object-position: center;
+} 
+
+.navbar {
+  width: 90%;
+  margin: auto;
+  /* padding: 10px 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Hanalei Fill';font-size: 22px;
+  padding-top: -10px;
+  padding-bottom: -10px;
 }
 
-#tempname{
-  color: white;
-  /* transform: translateX(1250px); */
-  z-index: 1;
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding-bottom: -10px;
 }
+
+.loginButton, .signupButton, .okButton .homeButton {
+  font-family: 'Zeyada';font-size: 22px;
+  padding: 10px 20px;
+  border: 1px solid rgb(240, 238, 238);
+  border-radius: 25px;
+  color: rgb(249, 249, 249);
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position:relative;
+  overflow: hidden;
+  width: 100px;
+  text-align: center;
+  margin: 20px 10px;
+  margin-top: auto;
+  object-position: center;
+  
+}
+
+
+.loginButton:hover, .signupButton:hover, .homeButton:hover {
+  background-color: rgb(255, 255, 255);
+  background-image: url(https://media.tenor.com/qNEa7i8Q1ykAAAAC/sky-mood.gif);
+
+  /* color: #333; */
+  box-shadow: 0px 0px 10px rgb(237, 237, 237);
+  transform: scale(1.1);
+  color: black;
+}
+.loginButton:active, .signupButton:active, .okButton .homeButton:active {
+  transform: translateY(3px);
+}
+
+.homeButton:hover {
+  background-color: rgb(8, 4, 4);
+  background-image: url(http://pa1.narvii.com/7550/8b37326e333776057e6455731e0bd82497f3c32br1-450-338_00.gif);
+
+
+
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px #fff;
+}
+.linkbutton:-webkit-any-link {
+  color: white;
+  text-decoration: none;
+}
+.logoutButton, .settingsButton{
+  margin-top: 10px;
+}
+.settingpadding{
+  margin-bottom: 100px;
+}
+.settingsText {
+  text-align: center;
+  list-style: none;
+  /* padding: 20px; */
+  
+}
+
+.settingsTitle {
+  text-align: center;
+  font-size: 4em;
+}
+.settingsLabel {
+  /* padding-top: 20px; */
+  padding-right: 5px;
+}
+.signup_label {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.articleBox {
+  margin-left: 5cm;
+  margin-right: 5cm;
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap ;
+  z-index: 0;
+}
+
+
+
+.products {
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 80px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: .4s;
+  background: rgb(203, 143, 162);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* min-height: 530px;  */
+  min-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+
+
+
+
+
+
+/* https://images.squarespace-cdn.com/content/v1/573c58af8259b5b384b39bc3/1578925947152-2ZEIB5B5SJOOAG29G4LU/BB_tamp.png?format=2500w */

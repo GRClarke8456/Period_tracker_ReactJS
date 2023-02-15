@@ -37,7 +37,7 @@ const handleChange = (event) => {
 }
 
 const handleChangeDate = (event) => {
-    let propertyName = event.target.name; 
+    let propertyName = event.target.name;
     let copiedUser1 = {...stateUser}
     let copiedUser2 = {...stateUser}
     copiedUser1[propertyName] = event.target.value;
@@ -48,7 +48,7 @@ const handleChangeDate = (event) => {
 
 const handleSubmit = (event) => {
     event.preventDefault()
-    // postAccount(stateUserFinal) 
+    postAccount(stateUserFinal) 
     closeModal(false)
 }
 
@@ -65,51 +65,51 @@ return (
         <div className="loginText">
             <form className="signup" role="search" onSubmit={handleSubmit}>
 
-                <li className="signup_label" htmlFor="signup_input">Username:
+                <div className="login_label" htmlFor="signup_input">Username:
                 <input
                     type="text"
                     placeholder="Type username here..." 
                     name= "name" 
                     value={stateUser.name}
                     onChange={handleChange} />
-                    </li>
+                    </div>
 
-                <li className="signup_label" htmlFor="signup_input">Email:
+                <div className="login_label" htmlFor="signup_input">Email:
                 <input 
                     type="text"
                     placeholder="Type email here..." className="signup_input" 
                     name="email"
                     value={stateUser.email}
                     onChange={handleChange} />
-                    </li>
+                    </div>
 
-                <li className="signup_label" htmlFor="signup_input">Password:
+                <div className="login_label" htmlFor="signup_input">Password:
                 <input 
                     type="password" 
                     placeholder="Type password here..." className="signup_input"
                     name="password" 
                     value={stateUser.password}
                     onChange={handleChange} />
-                    </li>
+                    </div>
 
-                    <li className="signup_label" htmlFor="signup_input">Confirm Password:
+                    <div className="login_label" htmlFor="signup_input">Confirm Password:
                 <input 
                     type="password" 
                     placeholder="Type password here..." className="signup_input"
                     name="password" 
                     value={stateUser.password}
                     onChange={handleChange} />
-                    </li>
+                    </div>
 
 
-                <li className="signup_label" htmlFor="signup_input">Date of Birth:
+                <div className="login_label" htmlFor="signup_input">Date of Birth:
                 <input 
                     type="date" 
                     placeholder="Enter DOB here..." className="signup_input" 
                     name="dateOfBirth"
                     value={stateUser.dateOfBirth} 
                     onChange={handleChangeDate} />
-                </li>
+                </div>
 
                 <input type="submit" value="OK" className="okButton"/>
 

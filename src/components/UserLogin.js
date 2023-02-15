@@ -33,21 +33,21 @@ const UserLogin = ({closeModal, logInToAnAccount}) => {
 
             <div className="loginText">
                 <form className="login" role="search" onSubmit={handleSubmit}>
-                    <li className="login_label" htmlFor="login_input">Username:
+                    <div className="login_label" htmlFor="login_input">Username:
                     <input 
                         type="text" 
                         placeholder="Type username here..." className="login_input" 
                         value={userName}
                         onChange={event => setUserName(event.target.value)} />
-                        </li>
+                        </div>
 
-                    <li className="login_label" htmlFor="login_input">Password:
+                    <div className="login_label" htmlFor="login_input">Password:
                     <input 
                         type="password"
                         placeholder="Type password here..." className="login_input" 
                         value={password}
                         onChange={event => setPassword(event.target.value)} />
-                    </li>
+                    </div>
                     <input type="submit" value="OK" className="okButton"/>
 
 

@@ -1,12 +1,14 @@
 import UserRegistration from "../components/UserRegistration";
 import UserLogin from "../components/UserLogin";
 import { useEffect, useState } from "react";
+import HomeContainer from "./HomeContainer";
 
 
-
-const UserContainer = () => {
+const UserContainer = ({postAccount}) => {
 
     const [users, setUsers] = useState();
+    
+    
     
     const SERVER_URL = "http://localhost:8080"
 
@@ -20,27 +22,14 @@ const UserContainer = () => {
         }, [])
 
 
-    const postAccount = async (newAccount) => {
-        const response = await fetch("http://localhost:8080/users", {
-            method: "POST",
-            headers: {'Content-Type' : 'application/json'},
-            body: JSON.stringify(newAccount)
-        }) 
-        const savedAccount = await response.json();
-        savedAccount.users = [];
-        setAllAccounts([...allAccounts, savedAccount])
-        setIsLoggedIn(true)
-        setAccount(savedAccount);
-    };
+   
 
 
 
 
     return ( 
         <>
-        < Users users ={users} />
-
-        <Navbar postAccount={postAccount} />
+        <UserRegistration postAccount={postAccount} />
 
         </>
      ); 

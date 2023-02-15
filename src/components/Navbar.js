@@ -10,7 +10,7 @@ const Navbar = ({postAccount}) => {
     const [allAccounts, setAllAccounts] = useState([]);
     const [loginModal, setLoginModal] = useState(false);
     const [registrationModal, setRegistrationModal] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
 

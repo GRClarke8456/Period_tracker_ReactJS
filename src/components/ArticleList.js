@@ -1,0 +1,27 @@
+import Article from "./Article";
+
+const ArticleList = ({articles}) => {
+    
+    // let mappedArticles = articles.map((article) => {
+    //     return <Article key={article.id} article={article} value={articles} />
+    // })
+    
+
+    let ArticleComponent;
+    if(articles){
+        return ArticleComponent = articles.map((article) => {
+            return (<Article key={article.id} article={article} name={article.title}/>)
+        });
+    }
+
+
+
+    return ( 
+        <div className="productcard">
+            <h1>Hey</h1>
+            {ArticleComponent}
+        </div>
+     );
+}
+ 
+export default ArticleList;
