@@ -721,3 +721,50 @@ h3:after {
 
 
 /* https://images.squarespace-cdn.com/content/v1/573c58af8259b5b384b39bc3/1578925947152-2ZEIB5B5SJOOAG29G4LU/BB_tamp.png?format=2500w */
+
+/* cycle calender  */
+.cyclePage {
+  background-color: rgb(169, 74, 98);
+  z-index: 1;
+
+}
+
+.cycleInfo {
+  position: absolute;
+  z-index: 1;
+  background-color: #e3bd6961;
+  border-radius: 10px;
+  padding: 10px;
+  filter: drop-shadow(1px 16px 30px rgb(242, 246, 131));
+}
+
+.startDate {
+  font-weight: bold;
+}
+/* pays of the period */
+.periodDay {
+    margin: o;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #a81c1c;
+    border-radius: 25px;
+
+
+  }
+  /* .periodDay .ant-badge-status {
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  } */
+
+  .calendarBox {
+    display: inline-block;
+    border: 0px solid rgb(0, 0, 0);
+    padding: 0px;
+    margin: 30px;
+    vertical-align: middle;
+    font-size: 10px;
+    }
