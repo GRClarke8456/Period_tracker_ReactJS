@@ -1,28 +1,27 @@
-
-import { useState, useEffect, useContext} from 'react';
-import { UserContext } from '../App';
+import { useState, useEffect } from "react";
 
 const SERVER_URL = "http://localhost:8080";
 
+const RegistrationContainer = ({closeModal}) => {
 
-const LoginContainer = ({closeModal, setJwt}) => {
-
-    
-
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [dob, setDob] = useState()
     const [error, setError] = useState("");
 
     const loginRequest = () => {
 
         const reqBody = {
+            "name": name,
             "email": email,
-            "password": password
+            "password": password,
+            "dob": dob
         };
         console.log(JSON.stringify(reqBody));
 
 
-        fetch(`${SERVER_URL}/api/auth/signin`, {
+        fetch(`${SERVER_URL}/api/auth/signup`, {
             headers: {
                 "Content-Type": "application/json"
             },
@@ -33,7 +32,7 @@ const LoginContainer = ({closeModal, setJwt}) => {
         // .then ((response) => response.json())
         .then((response) => {
             if(response.status === 200){
-                window.location.href = "/articles";
+                window.location.href = "/cycles";
                 return response.headers; 
             }
             else {
@@ -54,10 +53,19 @@ const LoginContainer = ({closeModal, setJwt}) => {
             <div className="modalContainer">
                 <span onClick={() => closeModal(false)} className="close">&times;  </span>
                 <div className="title">
-                    <h3>Log in here</h3>
+                    <h3>Sign up here!</h3>
                     <p className="redfont">{error}</p>
                 </div>
             <ul>
+
+                <div>
+                    <label htmlFor="name">Name</label>
+                    <input 
+                    type="text" 
+                    placeholder ="enter your name"
+                    value={name}
+                    onChange = {(e) => setName(e.target.value)} />  
+                </div>
 
                 <div>
                     <label htmlFor="email">Email</label>
@@ -67,6 +75,7 @@ const LoginContainer = ({closeModal, setJwt}) => {
                     value={email}
                     onChange = {(e) => setEmail(e.target.value)} />  
                 </div>
+
 
                 <div>
                     <label htmlFor="password">Password</label>
@@ -78,6 +87,15 @@ const LoginContainer = ({closeModal, setJwt}) => {
                 </div>
                 
                 <div>
+                    <label htmlFor="dob">Date of Birth</label>
+                    <input 
+                    type="date" 
+                    placeholder ="enter your date of birth"
+                    value={dob}
+                    onChange = {(e) => setDob(e.target.value)} />  
+                </div>
+
+                <div>
                     <button id="submit" type="button" onClick={() => loginRequest()}>
                         Login
                     </button>
@@ -86,8 +104,7 @@ const LoginContainer = ({closeModal, setJwt}) => {
             </ul>
             </div>
         </div>
-
-     );
+    );
 }
  
-export default LoginContainer;
+export default RegistrationContainer;

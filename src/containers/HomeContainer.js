@@ -7,12 +7,15 @@ import UserRegistration from "../components/UserRegistration";
 import ArticleContainer from "./ArticleContainer";
 import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
+import LoginContainer from "./LoginContainer";
+
 import Favourites from "../components/Favourites";
+import RegistrationContainer from "./RegistrationContainer";
 
 
 
 
-const HomeContainer = () => {
+const HomeContainer = ({setJwt}) => {
     
 const SERVER_URL = "http://localhost:8080"
 
@@ -138,7 +141,7 @@ const SERVER_URL = "http://localhost:8080"
                      > Login </li>
                      )}
 
-                    {loginModal && <UserLogin closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
+                    {loginModal && <LoginContainer setJwt={setJwt} closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
 
                     {/* </button> */}
 
@@ -151,7 +154,7 @@ const SERVER_URL = "http://localhost:8080"
                     > Sign Up </li> 
                     )}
 
-                     {signupModal && <UserRegistration closeModal={setSignupModal} postAccount={postAccount}/>} 
+                     {signupModal && <RegistrationContainer setJwt={setJwt} closeModal={setSignupModal} postAccount={postAccount}/>} 
 
 
 
@@ -191,6 +194,8 @@ const SERVER_URL = "http://localhost:8080"
             
 
             </Routes>
+           
+
             
                
             </div>

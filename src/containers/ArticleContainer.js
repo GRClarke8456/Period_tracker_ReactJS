@@ -9,10 +9,18 @@ const SERVER_URL = "http://localhost:8080"
 
 const [articles, setArticles] = useState([]);
 
+    const token = localStorage.getItem("jwt");
+
 
     useEffect(() => {
         const fetchData = async() => {
-            const response = await fetch(`${SERVER_URL}/articles`)
+            const response = await fetch(`${SERVER_URL}/articles`, {
+                headers: {
+                    // "Access-Control-Allow-Origin": true,
+                    // "Authorization": "Bearer " +token
+                },
+                credentials: "include"
+            })
             const data = await response.json();
             setArticles(data);
             console.log(data);

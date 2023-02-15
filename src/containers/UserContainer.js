@@ -14,7 +14,9 @@ const UserContainer = ({postAccount}) => {
 
     useEffect(() => {
     const fetchData = async() => {
-        const response = await fetch(`${SERVER_URL}/users`)
+        const response = await fetch(`${SERVER_URL}/users`, {
+            credentials: "include"
+        })
         const data = await response.json();
         setAllAccounts(data);
     }

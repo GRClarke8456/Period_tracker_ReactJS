@@ -12,7 +12,9 @@ const CycleContainer = () => {
 
     useEffect(() => {
         const fetchData = async() => {
-            const response = await fetch(`${SERVER_URL}/cycles`)
+            const response = await fetch(`${SERVER_URL}/cycles`, {
+                credentials: "include"
+            })
             const data = await response.json();
             setCycles(data);
             console.log(data);
@@ -21,6 +23,19 @@ const CycleContainer = () => {
             }, [])
             
 
+        const postCycle = async (newCycle) => {
+            const response = await fetch("http://localhost:8080/cycles", {
+                method: "POST",
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify(newCycle),
+                credentials: "include"
+            }) 
+            const savedCycle = await response.json();
+            savedCycle.cycles = [];
+            setCycle([...allCycles, savedCycle])
+            // setIsLoggedIn(true) 
+            setCycle(savedCycle);
+        };
         // const postCycle = async (newCycle) => {
         //     const response = await fetch("http://localhost:8080/cycles", {
         //         method: "POST",

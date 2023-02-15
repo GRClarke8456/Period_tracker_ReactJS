@@ -13,7 +13,8 @@ const [allComments, setAllComments] = useState([]);
 
 useEffect(() => {
     const fetchData = async() => {
-       const response = await fetch(`${SERVER_URL}/comments`)
+       const response = await fetch(`${SERVER_URL}/comments`,
+       {credentials: "include"})
        const data = await response.json();
        setComments(data);
     }
@@ -25,7 +26,8 @@ const postComment = async (newComment) => {
     const response = await fetch("http://localhost:8080/comments", {
         method: "POST",
         headers: {'Content-Type' : 'application/json'},
-        body: JSON.stringify(newComment)
+        body: JSON.stringify(newComment),
+        credentials: "include"
     }) 
     const savedComment = await response.json();
     savedComment.comments = [];
