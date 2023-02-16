@@ -19,7 +19,7 @@ import Questionnaire from "../components/Questionnaire";
 
 
 
-const HomeContainer = ({setJwt, filterArticles, filterArticles}) => {
+const HomeContainer = ({setJwt, filterArticles}) => {
     
 const SERVER_URL = "http://localhost:8080"
 
@@ -56,6 +56,23 @@ const SERVER_URL = "http://localhost:8080"
         }
         fetchData()
             }, [])
+
+    
+        useEffect(() => {
+            const fetchData = async() => {
+                const response = await fetch(`${SERVER_URL}/articles`, {
+                    headers: {
+                        // "Access-Control-Allow-Origin": true,
+                        // "Authorization": "Bearer " +token
+                    },
+                    credentials: "include"
+                })
+                const data = await response.json();
+                setArticles(data);
+                console.log(data);
+            }
+            fetchData()
+                }, [])
 
 
             // const filterArticles = (searchArtitcleName, searchTags) => {
@@ -220,14 +237,11 @@ const SERVER_URL = "http://localhost:8080"
             <Route path="/cycles" element={
                         <CycleContainer cycles={account.cycles}/>}
                     />
-            <Route path="/cycles" element={
-                        <CycleContainer cycles={account.cycles}/>}
-                    />
 
 
 
             <Route path="/favourites" element={
-                        <Favourites articles={account.articles} />
+                        <Favourites user={user} />
                     }
                     />
             

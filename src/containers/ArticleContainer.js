@@ -4,32 +4,32 @@ import Search from "../components/Search";
 
 
 
-const ArticleContainer = () => {
+const ArticleContainer = ({articles}) => {
 
 const SERVER_URL = "http://localhost:8080"
 
-const [articles, setArticles] = useState([]);
+// const [articles, setArticles] = useState([]);
 const [filteredArticles, setFilteredArticles] = useState();
 
 
     const token = localStorage.getItem("jwt");
 
 
-    useEffect(() => {
-        const fetchData = async() => {
-            const response = await fetch(`${SERVER_URL}/articles`, {
-                headers: {
-                    // "Access-Control-Allow-Origin": true,
-                    // "Authorization": "Bearer " +token
-                },
-                credentials: "include"
-            })
-            const data = await response.json();
-            setArticles(data);
-            console.log(data);
-        }
-        fetchData()
-            }, [])
+    // useEffect(() => {
+    //     const fetchData = async() => {
+    //         const response = await fetch(`${SERVER_URL}/articles`, {
+    //             headers: {
+    //                 // "Access-Control-Allow-Origin": true,
+    //                 // "Authorization": "Bearer " +token
+    //             },
+    //             credentials: "include"
+    //         })
+    //         const data = await response.json();
+    //         setArticles(data);
+    //         console.log(data);
+    //     }
+    //     fetchData()
+    //         }, [])
 
             const filterArticles = (searchArtitcleName, searchTags) => {
                 

@@ -7,17 +7,17 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
   
     console.log(articles);
     const {id} = useParams();
+
+    
+
     
   
-    // useEffect(() => {
-    //   {user ? <>
+    useEffect(() => {
+        if (user) {
       const articleLiked = didTheyLikeTheArticle(id);
-        setLikeArticle(articleLiked);
-      // </> :
-      // <></>}
-    //   if (isLoggedIn) {
-        
-    // }, []);
+        setLikeArticle(articleLiked);     
+        }
+    }, []);
 
   
     const didTheyLikeTheArticle = (articleID) => {
@@ -34,7 +34,7 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
       <>
       <h3>Liked Content</h3>
         {/* <section className="products"> */}
-            {articles ? articles.map((article) => {
+            {user ? user.articles.map((article) => {
                 return <>
                 <div className="blog-card spring-fever">
                 <div className="title-content">

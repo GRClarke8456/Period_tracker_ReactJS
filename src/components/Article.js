@@ -1,14 +1,16 @@
 import Comment from "./Comment";
 import { useState } from "react";
 import CommentForm from "./CommentForm";
+import { Link } from "react-router-dom";
+
 
 const SERVER_URL = "http://localhost:8080"
 
-import { Link } from "react-router-dom";
 
 
 
 const Article = ({article}) => {
+    
 
     const [comments, setComments] = useState(article.comments)
 
