@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
 
 const SERVER_URL = "http://localhost:8080";
 
@@ -11,7 +12,9 @@ const RegistrationContainer = ({closeModal}) => {
     const [DOB, setDOB] = useState(new Date)
     const [error, setError] = useState("");
 
-    const navigate = useNavigate;
+    const [user, setUser] = useContext(UserContext);
+
+    const navigate = useNavigate();
 
     const signUpRequest = () => {
 
@@ -33,11 +36,13 @@ const RegistrationContainer = ({closeModal}) => {
             method : "POST",
             body: JSON.stringify(reqBody),
         })
+        .then ((response) => response.json())
         .then((response) => {
-            if(response.status === 200){
-                {closeModal(false)}
-                navigate("/cycles");
-                return response.headers; 
+            console.log(response);
+            if(response.id){
+                closeModal(false)
+                setUser(response)
+                navigate("/questionnaire");
             }
             else {
                  return Promise.reject("Invalid sign up attempt");
