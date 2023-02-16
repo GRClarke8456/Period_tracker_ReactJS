@@ -2,12 +2,72 @@
 body {
   height: 100vh;
   width: 100%;
-  background-image: url(https://media1.giphy.com/media/TpWfdQdAY24aaOM49v/giphy.gif?cid=ecf05e4777lvx81phn27u35jgn8xakrx08zn5ngv964kkzmm&rid=giphy.gif&ct=g);
+  background-image: url(./ezgif.com-gif-to-webp.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Zeyada';font-size: 22px;
 }
+
+/* CLOUDS */
+.cloudy-mist-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7; /* set to match the color of the clouds */
+  opacity: 1; /* initially set to fully opaque */
+  z-index: 9999; /* set to a high z-index to ensure it's on top of other elements */
+}
+
+.cloudy-mist-container {
+  position: absolute;
+  top: 0;
+  left: 0vw;
+  width: 100vw;
+  height: 350vh;
+  background-image: url(./clouds.png);
+  
+  animation: move-cloudy-mist 10s;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes move-cloudy-mist {
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.content-container {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.content-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Add this rule to adjust the opacity of the overlay as the clouds move */
+.cloudy-mist-container {
+  animation-delay: 3s; /* set the delay to match when the clouds cover the content */
+}
+
+@media (max-width: 767px) {
+  .cloudy-mist-container {
+    background-size: cover;
+    animation: none;
+  }
+  .cloudy-mist-overlay {
+    display: none;
+  }
+}
+
 
 
 

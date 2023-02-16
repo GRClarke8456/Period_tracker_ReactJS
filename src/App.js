@@ -17,7 +17,14 @@ function App() {
 
   const [user, setUser] = useState(null);
   const[jwt, setJwt] = useLocalState("jwt", "");
+  // const [showContent, setShowContent] = useState(false);
 
+  // const handleCloudyEnd = () => {
+  //   setShowContent(true);
+  // };
+
+  
+  
   return (
     <>
     <UserContext.Provider value = {[user, setUser]}>
@@ -25,7 +32,9 @@ function App() {
 
     
 
-    <HomeContainer />
+    <div>
+      <HomeContainer />
+    </div>
     <Footer />
    </UserContext.Provider>
     </>
