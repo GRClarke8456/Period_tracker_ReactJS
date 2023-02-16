@@ -2,6 +2,7 @@ import Comment from "./Comment";
 import { useState, useContext } from "react";
 import CommentForm from "./CommentForm";
 import { UserContext } from "../App";
+import { Link } from "react-router-dom";
 
 
 const SERVER_URL = "http://localhost:8080"
