@@ -87,7 +87,7 @@ const Article = ({article}) => {
           </div>
           <div className="card-info">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
-            <Link to="/article/articleinfo">Read Article</Link>
+            <Link onClick={() => setExpanded(true)}> Read Article <span className="licon icon-arr icon-black readArticle"></span> </Link>
           </div>
           <div className="utility-info">
             <ul className="utility-list">
