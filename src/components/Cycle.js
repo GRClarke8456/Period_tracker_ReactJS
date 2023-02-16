@@ -69,10 +69,14 @@ const Cycle = ({cycle, user}) => {
     
 
     return ( 
+<<<<<<< HEAD
         <>
         <section className="cyclePage">
             {user ? user.cycle.map((cycle) => {
                 return <>
+=======
+        <div className="cyclePage page" >
+>>>>>>> RimmBranch
             <div className="cycleInfo">
             <p className="startDate">Cycle Information:</p>
             <p>Start date: {cycle.startDate}</p>
