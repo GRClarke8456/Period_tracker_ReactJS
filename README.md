@@ -1,6 +1,7 @@
 # My Moon - Period Tracker App
 
-Logo
+![My Moon](https://user-images.githubusercontent.com/110283546/219427772-3a057d5f-b42d-4a85-8753-b029477ec85f.png)
+
 
 <h2 align="center">Control your flow</h2>
 
