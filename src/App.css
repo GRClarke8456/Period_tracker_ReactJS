@@ -915,12 +915,13 @@ padding: 20px;
     }
 
     .comment-section {
-      background-color: #f5f5f5;
+      background-color: #aaa3a3;
       color: black;
       padding: 20px;
-      border-radius: 100px;
+      border-radius: 70px;
       width: 80%;
       position: relative;
+      
     }
     
 
