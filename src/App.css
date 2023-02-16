@@ -826,35 +826,71 @@ padding: 20px;
 
 /* https://images.squarespace-cdn.com/content/v1/573c58af8259b5b384b39bc3/1578925947152-2ZEIB5B5SJOOAG29G4LU/BB_tamp.png?format=2500w */
 
-/* cycle calender  */
-.cyclePage {
-  background-color: rgb(169, 74, 98);
-  
+/* cycle calendar  */
+
+.cyclePage h2, h4, h5{
+  margin-left: 15px;
 }
+
+.cyclePage h4{
+  font-size: 35px;
+}
+
+.cyclePage h2{
+  font-size: 45px;
+}
+
+.periodKey {
+  float: left;
+  width: 200px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 2px solid rgb(51, 51, 106);
+}
+
 .cycleInfo {
-  justify-content: space-between;
-  display: flex;
-  background-color: #e369d34a;
-  border-radius: 10px;
-  padding: 100px;
-  filter: drop-shadow(1px 16px 30px rgb(246, 131, 208));
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-gap: 5px;
+  /* background-color: #a81c1c; */
+  padding: 5px;
+  border: 5px;
+  margin-left: 20px;
+  margin-right: 40px;
 }
+.cycleInfo > p {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.tableHeader {
+  font-weight: bold;
+
+}
+
+.emotions, .symptons, .flow {
+  text-transform: lowercase;
+}
+
 
 .startDate {
   font-weight: bold;
 }
-/* pays of the period */
-.periodDay {
-    /* margin: ; */
+/* period dots */
+.periodDay, .periodDot {
+    margin: 10px;
     padding: 10px;
-    color: white;
+    color: #a81c1c;
     font-size: 12px;
     list-style: none;
     background-color: #a81c1c;
     /* border-radius: 5px; */
-    width: 35px;
-    height: 35px;
-    border: 1px solid #32557f;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #a81c1c;
     border-radius: 0 50% 50% 50%;
     transform: rotate(45deg);
     /* bottom: -50px; */
