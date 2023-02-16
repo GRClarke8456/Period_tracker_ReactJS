@@ -125,6 +125,8 @@ const SERVER_URL = "http://localhost:8080"
         <div className="cloudy-mist-container"></div>
         <div className="cloudy-mist-container2"></div>
         <div className="cloudy-mist-container3"></div>
+        <div className="cloudy-mist-container4"></div>
+        <div className="cloudy-mist-container5"></div>
         <div className="navbar">
         
              <ul>
