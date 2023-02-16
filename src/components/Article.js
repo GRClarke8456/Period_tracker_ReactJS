@@ -17,6 +17,10 @@ const Article = ({article}) => {
     const [comments, setComments] = useState(article.comments)
     const [numOfLikes, setNumOfLikes] = useState(article.numOfLikes);
 
+    const[showCommentForm, setShowCommentForm] = useState(false);
+
+    const [expanded, setExpanded] = useState(false);
+
     const commentComponent = comments.map((comment) => {
         return <Comment key={comment.id} comment={comment} />
     })
@@ -57,12 +61,16 @@ const Article = ({article}) => {
           }
       };
 
+      const handleCommentClick = () => {
+        setShowCommentForm(!showCommentForm);
+      };
+
 
     return ( 
         <>
 
 
-        <section>    
+        {/* <section>     */}
             <div className="blog-card spring-fever">
                 <div className="title-content">
                     {/* <h3><a href="#"> <{article.title}></a></h3> */}
@@ -101,7 +109,7 @@ const Article = ({article}) => {
                 <p>{article.numOfLikes}</p>
                 <p>{article.comments}</p> */}
 
-            </section>
+            {/* </section> */}
 
 
         </>

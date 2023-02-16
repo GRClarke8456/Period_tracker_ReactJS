@@ -48,12 +48,12 @@ const [filteredArticles, setFilteredArticles] = useState();
 
 
             return (
-    <div className="articleBoxx">
+    <div className="articleBox">
         <div className="articlestitle">
             <h1>Articles</h1>
             <hr/>
         </div>
-        <section>
+        <section className="articleListContainer">
             {/* <ArticleList articles={articles} />
              */}
 
