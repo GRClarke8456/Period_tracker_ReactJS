@@ -909,55 +909,6 @@ padding: 20px;
   transition: transform 0.2s ease-in-out;
     }
 
-    /* expanded comment seciton */
-    /* .spring-fever {
-      position: relative;
-    }
-    
-    .spring-fever .card-info {
-      height: 0;
-      overflow: hidden;
-    }
-    
-    .spring-fever .utility-info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: white;
-      padding: 10px;
-      transition: all 0.5s;
-      height: 60px;
-      overflow: hidden;
-    }
-    
-    .spring-fever .utility-info.open {
-      height: auto;
-      transition: all 0.5s;
-    }
-    
-    .spring-fever .utility-info.open .comment-form {
-      display: block;
-    }
-    
-    .spring-fever .utility-info li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-    
-    .spring-fever .utility-info li:last-child {
-      margin-right: 0;
-    }
-    
-    .spring-fever .utility-info li .licon {
-      margin-right: 5px;
-      font-size: 16px;
-    }
-    
-    .comment-form {
-      display: none;
-    } */
-
     .blog-card.expanded {
       height: 900px;
     }
@@ -967,5 +918,16 @@ padding: 20px;
       z-index: 10000;
 
     }
+
+    .comment-section {
+      background-color: #f5f5f5;
+      color: black;
+      padding: 20px;
+      border-radius: 100px;
+      width: 80%;
+      position: relative;
+    }
+    
+
     
 
