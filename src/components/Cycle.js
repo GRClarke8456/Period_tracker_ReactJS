@@ -14,22 +14,18 @@ const Cycle = ({cycle}) => {
       borderRadius: token.borderRadiusLG,
     };
 
-    const monthCellRender = (date) => {
-        if (dayjs(date) > dayjs(cycle.startDate) && dayjs(date) < dayjs(cycle.lastDate)){
-            return (
-            <ul className="periodDay">
-                <li>Period month</li>
-            </ul>
-            )}
-      };
-    
-
-    // calendar period days
+// calendar period days
     const dateCellRender= (date) => {
         if (dayjs(date) > dayjs(cycle.startDate) && dayjs(date) < dayjs(cycle.lastDate)){
             return (
             <ul className="periodDay">
                 <li>Period</li>
+            </ul>
+        )}
+        if (dayjs(date) > dayjs(cycle.startDate + 14) && dayjs(date) < dayjs(cycle.lastDate + 34)){
+            return (
+            <ul className="ovulationDay">
+                <li>Ovulation</li>
             </ul>
         )}
     }
@@ -53,7 +49,6 @@ const Cycle = ({cycle}) => {
                     <Calendar 
                     
                     dateCellRender={dateCellRender} 
-                    monthCellRender={monthCellRender}
                     />
                 </div>  
             </div>
