@@ -63,7 +63,7 @@ const Settings =({account})=>{
 
     return (
         <>
-            <div className="settingsTitle">
+            <div className="settingsTitle page">
                 <h3>Settings</h3>
             </div>
             {/* <div className="emojiHead">👤</div>  */}

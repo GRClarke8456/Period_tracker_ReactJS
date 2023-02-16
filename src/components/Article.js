@@ -68,55 +68,50 @@ const Article = ({article}) => {
 
     return ( 
         <>
-         <section>
-        <div
-          className={`blog-card spring-fever${expanded ? " expanded" : ""}`}
-          onClick={() => setExpanded(!expanded)}
-        >
-          <div className="title-content">
-            <h3>{article.title}</h3>
-            <div className="intro">
-              <a href="#">Women and Lifestyle</a>
+
+
+        {/* <section>     */}
+            <div className="blog-card spring-fever">
+                <div className="title-content">
+                    {/* <h3><a href="#"> <{article.title}></a></h3> */}
+
+                    <h3>{article.title}</h3>
+                    <div className="intro"> <a href="#">Women and Lifestyle</a> </div>
+                </div>
+                <div className="card-info">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim... 
+                    {/* <Link  className="licon icon-arr icon-black" to="/article/articleinfo">Read Article</Link> */}
+                    <Link to="/article/articleinfo">Read Article</Link>
+                    {/* <Link className="linkbutton" to="/">Log Out</Link> */}
+                    {/* <Link className="licon icon-arr icon-black" to={`/articles/${article.id}`}> Read Article </Link> */}
+                    {/* <a href="#">Read Article<span className="licon icon-arr icon-black"></span></a> */}
+
+                </div>
+                <div className="utility-info">
+                <ul className="utility-list">
+                {/* <li><span className="licon icon-like"></span><a href="#">2</a></li> */}
+                <li onClick={handleLikeClick}><span className="licon icon-like"></span> {numOfLikes} </li>
+                
+                <li><span className="licon icon-com"></span> ... </li>
+                <li><span className="licon icon-dat"></span> {article.date} </li>
+                <li><span className="licon icon-tag"></span> {article.tag} </li>
+                </ul>
+                </div>
+                <div className="gradient-overlay"></div>
+                <div className="color-overlay"></div>
             </div>
-          </div>
-          <div className="card-info">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
-            <Link to="/article/articleinfo">Read Article</Link>
-          </div>
-          <div className="utility-info">
-            <ul className="utility-list">
-              <li onClick={handleLikeClick}>
-                <span className="licon icon-like"></span> {numOfLikes}{" "}
-              </li>
-              <li onClick={handleCommentClick}>
-                <span className="licon icon-com"></span> ...
-              </li>
-              <li>
-                <span className="licon icon-dat"></span> {article.date}
-              </li>
-              <li>
-                <span className="licon icon-tag"></span> {article.tag}
-              </li>
-            </ul>
-          </div>
-          <div className="gradient-overlay"></div>
-          <div className="color-overlay"></div>
-          {expanded && (
-            <>
-              <div className="comment-section">
-                <ul>{commentComponent}</ul>
-                <CommentForm
-                  postNewComment={postNewComment}
-                  articleId={article.id}
-                />
-              </div>
-              <div className="close-button" onClick={() => setExpanded(false)}>
-                Close
-              </div>
-            </>
-          )}
-        </div>
-    </section>
+                <p>Reviews:</p>
+                <ul>
+                    {commentComponent}
+                </ul>
+                <CommentForm postNewComment={postNewComment} articleId={article.id} />
+                {/* <p>{article.articleslikes}</p>
+                <p>{article.numOfLikes}</p>
+                <p>{article.comments}</p> */}
+
+            {/* </section> */}
+
+
         </>
 
      );
