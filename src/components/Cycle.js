@@ -27,6 +27,12 @@ const Cycle = ({cycle, user}) => {
         }
         return check;
     }
+
+
+
+
+
+    
 // calendar
     const onPanelChange = (value, mode) => {
         console.log(value.format('YYYY-MM-DD'), mode);
@@ -65,8 +71,8 @@ const Cycle = ({cycle, user}) => {
     return ( 
         <>
         <section className="cyclePage">
-            {/* {cycle ? cycle.cycle.map((cycle) => {
-                reurn <> */}
+            {user ? user.cycle.map((cycle) => {
+                return <>
             <div className="cycleInfo">
             <p className="startDate">Cycle Information:</p>
             <p>Start date: {cycle.startDate}</p>
@@ -88,9 +94,9 @@ const Cycle = ({cycle, user}) => {
               
             </div>
             
-            {/* </>
+            </>
         }):""
-        } */}
+        }
         </section>
 </>
         
