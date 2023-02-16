@@ -60,8 +60,16 @@ const Article = ({article}) => {
           }
       };
 
-      const handleCommentClick = () => {
-        setShowCommentForm(showCommentForm);
+      // Event listener to expand the article when the comment icon is clicked
+      const handleCommentClick = (e) => {
+        //checking if element has class name of the icon. if so, user has clicked on it
+        if (e.target.classList.contains("close-button")) {
+          // because icon has been clicked on, showCommentForm state set to be opposite of its current value.
+          setShowCommentForm(!showCommentForm);
+        } else {
+          //
+          setExpanded(!expanded);
+        }
       };
 
 
@@ -70,7 +78,6 @@ const Article = ({article}) => {
          <section>
         <div
           className={`blog-card spring-fever${expanded ? " expanded" : ""}`}
-          onClick={() => setExpanded(!expanded)}
         >
           <div className="title-content">
             <h3>{article.title}</h3>
@@ -109,9 +116,6 @@ const Article = ({article}) => {
                   articleId={article.id}
                 />
               </div>
-              <div className="close-button" onClick={() => setExpanded(false)}>
-                Close
-              </div>
             </>
           )}
         </div>
@@ -122,5 +126,6 @@ const Article = ({article}) => {
 
      );
 }
+
  
 export default Article;
