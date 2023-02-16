@@ -17,11 +17,13 @@ const CycleContainer = () => {
                 credentials: "include"
             })
             const data = await response.json();
-            setAllCycles(data);
+            setCycles(data);
             console.log(data);
         }
         fetchData()
             }, [])
+            
+ 
             
 
         const postCycle = async (newCycle) => {
@@ -38,6 +40,8 @@ const CycleContainer = () => {
             setCycle(savedCycle);
             // credentials:"include";
         };
+
+
         // const postCycle = async (newCycle) => {
         //     const response = await fetch("http://localhost:8080/cycles", {
         //         method: "POST",
@@ -64,7 +68,12 @@ const CycleContainer = () => {
 
     return (
         <>
+        <div>
+            <h3>Cycle Calender</h3>
+        </div>
+        <section>
         {cycles ? <CycleList cycles={cycles}/> : ""}
+        </section>
         </>
          
      );

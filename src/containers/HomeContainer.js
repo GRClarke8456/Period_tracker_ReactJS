@@ -185,9 +185,9 @@ const SERVER_URL = "http://localhost:8080"
                     }
                     />
             
-            <Route path="/cycles" element={
+            {/* <Route path="/cycles" element={
                         <CycleContainer/>}
-                    />
+                    /> */}
 
             </Routes>
            
