@@ -12,12 +12,14 @@ import Footer from "../components/Footer";
 
 import Favourites from "../components/Favourites";
 import RegistrationContainer from "./RegistrationContainer";
+import Search from "../components/Search";
+import ArticleInfo from "../components/ArticleInfo";
 import Questionnaire from "../components/Questionnaire";
 
 
 
 
-const HomeContainer = ({setJwt, filterArticles}) => {
+const HomeContainer = ({setJwt, filterArticles, filterArticles}) => {
     
 const SERVER_URL = "http://localhost:8080"
 
@@ -25,6 +27,8 @@ const SERVER_URL = "http://localhost:8080"
      
     const [account, setAccount] = useState(false);
     const [allAccounts, setAllAccounts] = useState([]);
+    const [articles, setArticles] = useState([]);
+    const [filteredArticles, setFilteredArticles] = useState();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
@@ -53,6 +57,20 @@ const SERVER_URL = "http://localhost:8080"
         fetchData()
             }, [])
 
+
+            // const filterArticles = (searchArtitcleName, searchTags) => {
+                
+            //     const foundArticlesByName = articles.filter(article => {
+            //       return article.title.toLowerCase().includes(searchArtitcleName.toLowerCase())
+            //     })
+        
+            //     const foundArticlesByTags = foundArticlesByName.filter(article => {
+            //         return article.tag.toLowerCase().includes(searchTags.toLowerCase())
+            //     })
+            
+        
+            //     setFilteredArticles(foundArticlesByTags)
+            //   }
 
 
     const postAccount = async (newAccount) => {
@@ -123,6 +141,25 @@ const SERVER_URL = "http://localhost:8080"
 
         <BrowserRouter>
         <div>
+
+        {/* <head>
+            <title>My Moon</title>
+            
+        </head>
+        <body>
+            <header>
+                <a href="#" className="logo">Logo</a>
+                <ul>
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="#">About</a></li>
+                    <li> <a href="#">Work</a></li>
+                    <li> <a href="#">Home</a></li>
+                </ul>
+            </header>
+        </body> */}
+
+
+
         
         <div className="navbar">
         
@@ -170,21 +207,27 @@ const SERVER_URL = "http://localhost:8080"
         
             <Routes>
 
+            <Route path="article/articleinfo" element={<ArticleInfo /> } />
+
 
             <Route path="/settings" element={
                         <Settings />}
                     />
             
             <Route path="/articles" element={
-                        <ArticleContainer articles={account.articles}/>}
+                        <ArticleContainer filterArticles={filterArticles} articles={filteredArticles ? filteredArticles : articles} />}
+                    />
+            <Route path="/cycles" element={
+                        <CycleContainer cycles={account.cycles}/>}
                     />
             <Route path="/cycles" element={
                         <CycleContainer cycles={account.cycles}/>}
                     />
 
 
+
             <Route path="/favourites" element={
-                        <Favourites articles={account.articles}/>
+                        <Favourites articles={account.articles} />
                     }
                     />
             
