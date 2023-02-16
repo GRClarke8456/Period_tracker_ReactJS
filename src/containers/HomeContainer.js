@@ -14,11 +14,12 @@ import Favourites from "../components/Favourites";
 import RegistrationContainer from "./RegistrationContainer";
 import Search from "../components/Search";
 import ArticleInfo from "../components/ArticleInfo";
+import Questionnaire from "../components/Questionnaire";
 
 
 
 
-const HomeContainer = ({setJwt, filterArticles}) => {
+const HomeContainer = ({setJwt, filterArticles, filterArticles}) => {
     
 const SERVER_URL = "http://localhost:8080"
 
@@ -233,6 +234,8 @@ const SERVER_URL = "http://localhost:8080"
             {/* <Route path="/cycles" element={
                         <CycleContainer/>}
                     /> */}
+
+            <Route path="/questionnaire" element={<Questionnaire/>}/>
 
             </Routes>
            

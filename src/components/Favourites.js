@@ -9,12 +9,15 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
     const {id} = useParams();
     
   
-    useEffect(() => {
-      if (isLoggedIn) {
-        const articleLiked = didTheyLikeTheArticle(id);
+    // useEffect(() => {
+    //   {user ? <>
+      const articleLiked = didTheyLikeTheArticle(id);
         setLikeArticle(articleLiked);
-      }
-    }, []);
+      // </> :
+      // <></>}
+    //   if (isLoggedIn) {
+        
+    // }, []);
 
   
     const didTheyLikeTheArticle = (articleID) => {
@@ -63,7 +66,7 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
         {/* </section> */}
       </>
     );
-  };
+  }
 
   
   export default Favourites;
