@@ -1,6 +1,7 @@
 import Comment from "./Comment";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CommentForm from "./CommentForm";
+import { UserContext } from "../App";
 import { Link } from "react-router-dom";
 
 
@@ -10,9 +11,11 @@ const SERVER_URL = "http://localhost:8080"
 
 
 const Article = ({article}) => {
-    
+
+    const [user, setUser] = useContext(UserContext);
 
     const [comments, setComments] = useState(article.comments)
+    const [numOfLikes, setNumOfLikes] = useState(article.numOfLikes);
 
     const commentComponent = comments.map((comment) => {
         return <Comment key={comment.id} comment={comment} />
@@ -36,8 +39,23 @@ const Article = ({article}) => {
     };
 
 
-
-    
+    const handleLikeClick = async () => {
+        
+          const response = await fetch(`${SERVER_URL}/articles/${article.id}/${user.id}`, {
+            method: "PATCH",
+            credentials:"include",
+            mode: 'cors',
+          });
+          console.log(response);
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data)
+            setNumOfLikes(data.articleLikes.length);
+            console.log(numOfLikes);
+          }else {
+            console.log(response);
+          }
+      };
 
 
     return ( 
@@ -64,7 +82,7 @@ const Article = ({article}) => {
                 <div className="utility-info">
                 <ul className="utility-list">
                 {/* <li><span className="licon icon-like"></span><a href="#">2</a></li> */}
-                <li><span className="licon icon-like"></span> {article.numOfLikes} </li>
+                <li onClick={handleLikeClick}><span className="licon icon-like"></span> {numOfLikes} </li>
                 
                 <li><span className="licon icon-com"></span> ... </li>
                 <li><span className="licon icon-dat"></span> {article.date} </li>
