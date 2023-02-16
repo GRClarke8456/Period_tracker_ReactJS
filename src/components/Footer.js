@@ -1,7 +1,7 @@
 const Footer = () => {
     return ( 
         <>
-        <hr class="solid"></hr>
+        <hr className="solid"></hr>
         <div className="footer_links">
             
             <ul className="footerLinks">

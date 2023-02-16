@@ -66,7 +66,6 @@ const CycleContainer = () => {
     return (
         <>
         {cycles ? <CycleList cycles={cycles}/> : ""}
-        <Questionnaire postCycle={postCycle}/>
         </>
          
      );

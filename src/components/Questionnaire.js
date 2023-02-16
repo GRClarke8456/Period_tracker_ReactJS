@@ -1,20 +1,34 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
 
-const Questionnaire = ({postCycle}) => {
+const Questionnaire = () => {
 
     const [lastDate, setLastDate] = useState(new Date);
     const [startDate, setStartDate] = useState(new Date);
 
-    // const [error, setError] = useState("");
+    const navigate = useNavigate();
 
+    const [user, setUser] = useContext(UserContext);
 
+    const postCycle = async (newCycle) => {
+        const response = await fetch("http://localhost:8080/cycles/"+user.id, {
+            method: "POST",
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(newCycle),
+            credentials: "include"
+        }) 
+        const savedCycle = await response.json();
+        navigate("/cycles")
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const postBody = {
-            startDate, lastDate
+            startDate, lastDate, userId:user.id
         }
         postCycle(postBody);
+        navigate("/cycles")
     }
 
     return ( 
@@ -36,6 +50,8 @@ const Questionnaire = ({postCycle}) => {
             value={lastDate}
             onChange={(event) => setLastDate(event.target.value)}
             />
+
+            <button type="submit">OK</button>
 
             <h4>Why is this needed?</h4>
             <p>Our app is designed to help predict your next period.</p>
