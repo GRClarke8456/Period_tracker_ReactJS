@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CycleList from "../components/CycleList";
+import Questionnaire from "../components/Questionnaire";
 
 const CycleContainer = () => {
 
@@ -65,6 +66,7 @@ const CycleContainer = () => {
     return (
         <>
         {cycles ? <CycleList cycles={cycles}/> : ""}
+        <Questionnaire postCycle={postCycle}/>
         </>
          
      );
