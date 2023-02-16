@@ -82,9 +82,22 @@ const SpecificCycle = ({cycles, user}) => {
     
 
 
-    return ( <>
-    <h3>Your Cycle</h3>
+    return ( 
+    <>
     <section className="cyclePage">
+
+    <h3>Your Cycle</h3>
+    <div className="calendarBox">
+                <div className="calendar" >
+                {/* <div className="calendar" style={wrapperStyle}> */}
+                {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
+                    <Calendar 
+                    
+                    dateCellRender={dateCellRender} 
+                    />
+            </div>  
+              
+        </div>
             {user ? user.cycles.map((cycle) => {
                 return <>
             <div className="cycleInfo">
@@ -100,17 +113,12 @@ const SpecificCycle = ({cycles, user}) => {
             </>
         }):""
         }
-         <div className="calendarBox">
-                <div className="calendar" >
-                {/* <div className="calendar" style={wrapperStyle}> */}
-                {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
-                    <Calendar 
-                    
-                    dateCellRender={dateCellRender} 
-                    />
-            </div>  
-              
-            </div>
+         
+
+        <div>
+            <h5>Ovulation date</h5>
+            <h6>The ovulation date is when an egg is released from the ovary and can potentially be fertilised. This is an estimate based calculated 14 days before menstruation. </h6>
+        </div>
             
         </section>
 
