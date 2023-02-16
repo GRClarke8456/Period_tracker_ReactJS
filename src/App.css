@@ -45,10 +45,8 @@ body {
   width: 100%;
   height: 100vh;
   background-image: url(./clouds.png);
-  background-size: 1000px;
-  /* animation-delay: 1s; */
+  background-size: 800px;
   animation: move-cloudy-mist2 10s forwards;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 @keyframes move-cloudy-mist2 {
@@ -71,7 +69,6 @@ body {
   height: 26vw;
   background-image: url(./clouds.png);
   background-size: 500px;
-  /* animation-delay: 1s; */
   animation: move-cloudy-mist3 6s forwards;
   
 }
@@ -103,7 +100,6 @@ body {
   height: 26vw;
   background-image: url(./clouds.png);
   background-size: 500px;
-  /* animation-delay: 1s; */
   animation: move-cloudy-mist4 8s forwards;
   
 }
@@ -131,18 +127,17 @@ body {
   position: absolute;
   top: 0;
   left: 0vw;
-  width: 100vw;
+  width: 105vw;
   height: 26vw;
   background-image: url(./clouds.png);
   background-size: 500px;
-  /* animation-delay: 1s; */
   animation: move-cloudy-mist5 5s forwards;
   
 }
 
 @keyframes move-cloudy-mist5 {
   0% {
-    transform: translateX(-30vw);
+    transform: translateX(-10vw);
   }
   100% {
     transform: translateX(-30vw); 
