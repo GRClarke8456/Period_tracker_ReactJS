@@ -235,7 +235,7 @@ const SERVER_URL = "http://localhost:8080"
                         <ArticleContainer filterArticles={filterArticles} articles={filteredArticles ? filteredArticles : articles} />}
                     />
             <Route path="/cycles" element={
-                        <CycleContainer cycles={account.cycles}/>}
+                        <CycleContainer cycles={account.cycles} user={user}/>}
                     />
 
 

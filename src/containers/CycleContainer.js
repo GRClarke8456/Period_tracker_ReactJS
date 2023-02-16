@@ -70,7 +70,7 @@ const CycleContainer = () => {
     return (
         <>
         <div>
-            <h3>Cycle Calender</h3>
+            <h3>Cycle History</h3>
         </div>
         <section>
         {cycles ? <CycleList cycles={cycles}/> : ""}

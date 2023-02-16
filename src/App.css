@@ -710,10 +710,10 @@ padding: 20px;
 .cycleInfo {
   position: absolute;
   z-index: 1;
-  background-color: #e3bd6961;
+  background-color: #e369d34a;
   border-radius: 10px;
   padding: 10px;
-  filter: drop-shadow(1px 16px 30px rgb(242, 246, 131));
+  filter: drop-shadow(1px 16px 30px rgb(246, 131, 208));
 }
 
 .startDate {
@@ -721,14 +721,29 @@ padding: 20px;
 }
 /* pays of the period */
 .periodDay {
-    margin: o;
+    /* margin: ; */
     padding: 10px;
-    font-size: 20px;
+    color: white;
+    font-size: 12px;
+    list-style: none;
     background-color: #a81c1c;
-    border-radius: 25px;
-
+    /* border-radius: 5px; */
+    width: 35px;
+    height: 35px;
+    border: 1px solid #32557f;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    /* bottom: -50px; */
+    /* position: relative; */
+    /* left: 17px; */
+    overflow: hidden;
 
   }
+.ovulationDay {
+  font-size: 15px;
+  font-weight: bold;
+}
+
   /* .periodDay .ant-badge-status {
     width: 100%;
     overflow: hidden;
