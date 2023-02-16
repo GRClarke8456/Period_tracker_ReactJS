@@ -83,7 +83,7 @@ const SpecificCycle = ({cycles, user}) => {
 
 
     return ( <>
-    <h3>Your Cycle</h3>
+    <h3 className="page">Your Cycle</h3>
     <section className="cyclePage">
             {user ? user.cycles.map((cycle) => {
                 return <>

@@ -100,7 +100,7 @@ header ul li a.active{
 
 }
 
-section::before{
+section.bodymain::before{
   content: '';
   position: absolute;
   bottom:0;
@@ -500,7 +500,7 @@ color:#fff;
 
 .title-content {
   text-align: center;
-  margin: -30px 0 0 0;
+  margin: 20px 0 0 0;
   position: absolute;
   z-index: 20;
   width: 100%;
