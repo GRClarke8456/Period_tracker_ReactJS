@@ -178,7 +178,7 @@ const SERVER_URL = "http://localhost:8080"
                         <ArticleContainer articles={account.articles}/>}
                     />
             <Route path="/cycles" element={
-                        <CycleContainer cycles={account.cycles}/>}
+                        <CycleContainer cycles={account.cycles} user={user}/>}
                     />
 
 
