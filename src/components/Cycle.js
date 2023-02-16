@@ -32,7 +32,7 @@ const Cycle = ({cycle}) => {
     
 
     return ( 
-        <div className="cyclePage">
+        <div className="cyclePage page" >
             <div className="cycleInfo">
             <p className="startDate">Cycle Information:</p>
             <p>Start date: {cycle.startDate}</p>

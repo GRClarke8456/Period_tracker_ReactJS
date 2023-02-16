@@ -31,7 +31,7 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
     };
   
     return (
-      <>
+      <div className="page">
       <h3>Liked Content</h3>
         {/* <section className="products"> */}
             {user ? user.articles.map((article) => {
@@ -64,7 +64,7 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
             } ) : ""
             }
         {/* </section> */}
-      </>
+      </div>
     );
   }
 

@@ -44,7 +44,7 @@ const Article = ({article}) => {
         <>
 
 
-        <section>    
+        {/* <section>     */}
             <div className="blog-card spring-fever">
                 <div className="title-content">
                     {/* <h3><a href="#"> <{article.title}></a></h3> */}
@@ -83,7 +83,7 @@ const Article = ({article}) => {
                 <p>{article.numOfLikes}</p>
                 <p>{article.comments}</p> */}
 
-            </section>
+            {/* </section> */}
 
 
         </>
