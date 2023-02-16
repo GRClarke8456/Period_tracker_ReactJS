@@ -49,24 +49,35 @@ const SpecificCycle = ({cycles, user}) => {
 
 // calendar period days
     const dateCellRender= (date) => {
-        const startDate = dayjs(cycles.startDate);
-        const ovulationDay = startDate.subtract(14, 'day');
-        const ovulationEnd = startDate.subtract(13, 'day');
-        const endDate = dayjs(cycles.lastDate);
-        // const c = endDate(14, 'day')
-        if (dayjs(date) > startDate && dayjs(date) < endDate){
-            return (
+        let period = false;
+        let ovulation = false;
+        user.cycles.forEach((cycle) =>{
+            const startDate = dayjs(cycle.startDate);
+            const ovulationDay = startDate.subtract(14, 'day');
+            const ovulationEnd = startDate.subtract(13, 'day');
+            const endDate = dayjs(cycle.lastDate);
+            // const c = endDate(14, 'day')
+            if (dayjs(date) > startDate && dayjs(date) < endDate){
+                period = true;
+               }
+            if (dayjs(date) > ovulationDay && dayjs(date) < ovulationEnd){
+                ovulation = true;
+            }
+
+         })
+        if (period) {
+         return (
             <ul className="periodDay">
                 <h4>Period</h4>
             </ul>
-        )}
-        if (dayjs(date) > ovulationDay && dayjs(date) < ovulationEnd){
+        ) }
+        if (ovulation){
             return (
-            <ul className="ovulationDay">
-                <li>Ovulation Day</li>
-            </ul>
+                <ul className="ovulationDay">
+                    <li>Ovulation Day</li>
+                </ul>
         )}
-        
+
     }
     
 
@@ -85,7 +96,11 @@ const SpecificCycle = ({cycles, user}) => {
             <p>Flow: {cycle.flow}</p>
             <hr/>
             </div>
-            <div className="calendarBox">
+           
+            </>
+        }):""
+        }
+         <div className="calendarBox">
                 <div className="calendar" >
                 {/* <div className="calendar" style={wrapperStyle}> */}
                 {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
@@ -97,9 +112,6 @@ const SpecificCycle = ({cycles, user}) => {
               
             </div>
             
-            </>
-        }):""
-        }
         </section>
 
 
