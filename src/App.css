@@ -954,7 +954,12 @@ padding: 20px;
     } */
 
     .blog-card.expanded {
-      height: 700px;
+      height: 900px;
+    }
+
+    .comment-form {
+      transform: translateY(100px);
+
     }
     
 

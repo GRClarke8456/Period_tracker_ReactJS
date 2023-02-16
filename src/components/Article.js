@@ -61,7 +61,7 @@ const Article = ({article}) => {
       };
 
       const handleCommentClick = () => {
-        setShowCommentForm(!showCommentForm);
+        setShowCommentForm(showCommentForm);
       };
 
 
