@@ -122,23 +122,23 @@ const SERVER_URL = "http://localhost:8080"
         <div className="navbar">
 
              <ul>
-             {ifLoggedIn(
+             {/* {ifLoggedIn( */}
                 <li className="homeButton">
                     <Link className="linkbutton" to="/cycles">Cycles</Link>
                 </li>
-             )}
+             {/* )} */}
 
-                {ifLoggedIn(
+                {/* {ifLoggedIn( */}
                 <li className="homeButton">
                     <Link className="linkbutton" to="/articles">Articles</Link>
                 </li>
-                )}
+                {/* )} */}
 
-                {ifLoggedIn(
+                {/* {ifLoggedIn( */}
                 <li className="homeButton">
                     <Link className="linkbutton" to="/favourites">Favourites</Link>
                 </li>
-                )}
+                {/* )} */}
                     </ul>
 
 
@@ -170,13 +170,13 @@ const SERVER_URL = "http://localhost:8080"
 
 
 
-            {ifLoggedIn(
+            {/* {ifLoggedIn( */}
                  <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
-                     )} 
+                     {/* )}  */}
             
-             {ifLoggedIn(
+             {/* {ifLoggedIn( */}
                 <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
-                    )}
+                    {/* )} */}
 
                 {/* </button> */}
                 </ul>
