@@ -957,8 +957,9 @@ padding: 20px;
       height: 900px;
     }
 
-    .comment-form {
-      transform: translateY(100px);
+    .comment-section {
+      transform: translateY(600px);
+      z-index: 10000;
 
     }
     
