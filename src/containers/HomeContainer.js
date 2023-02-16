@@ -123,6 +123,8 @@ const SERVER_URL = "http://localhost:8080"
         <BrowserRouter>
         <div>
         <div className="cloudy-mist-container"></div>
+        <div className="cloudy-mist-container2"></div>
+        <div className="cloudy-mist-container3"></div>
         <div className="navbar">
         
              <ul>

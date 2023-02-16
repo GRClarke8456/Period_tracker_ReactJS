@@ -10,67 +10,90 @@ body {
 }
 
 /* CLOUDS */
-.cloudy-mist-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f7f7f7; /* set to match the color of the clouds */
-  opacity: 1; /* initially set to fully opaque */
-  z-index: 9999; /* set to a high z-index to ensure it's on top of other elements */
-}
-
 .cloudy-mist-container {
   position: absolute;
   top: 0;
   left: 0vw;
-  width: 100vw;
-  height: 350vh;
+  width: 105vw;
+  height: 100vh;
   background-image: url(./clouds.png);
-  
-  animation: move-cloudy-mist 10s;
+  background-size: 4500px;
+  /* animation-delay: 1s; */
+  animation: move-cloudy-mist 10s forwards;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 @keyframes move-cloudy-mist {
+  0% {
+    opacity: 1;
+  }
   50% {
+    opacity: 0.85;
+  }
+  20% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cloudy-mist-container2 {
+  position: absolute;
+  top: 0;
+  left: 0vw;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./clouds.png);
+  background-size: 1000px;
+  /* animation-delay: 1s; */
+  animation: move-cloudy-mist2 10s forwards;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes move-cloudy-mist2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cloudy-mist-container3 {
+  position: absolute;
+  top: 0;
+  left: 0vw;
+  width: 100vw;
+  height: 26vw;
+  background-image: url(./clouds.png);
+  background-size: 500px;
+  /* animation-delay: 1s; */
+  animation: move-cloudy-mist3 10s forwards;
+  
+}
+
+@keyframes move-cloudy-mist3 {
+  0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateY(30vw); 
+    /* going down */
+  }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
   }
 }
-
-.content-container {
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.content-container.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-/* Add this rule to adjust the opacity of the overlay as the clouds move */
-.cloudy-mist-container {
-  animation-delay: 3s; /* set the delay to match when the clouds cover the content */
-}
-
-@media (max-width: 767px) {
-  .cloudy-mist-container {
-    background-size: cover;
-    animation: none;
-  }
-  .cloudy-mist-overlay {
-    display: none;
-  }
-}
-
-
-
-
 
 
 /* MODAL */
