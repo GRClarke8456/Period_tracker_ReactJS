@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useLayoutEffect, useEffect } from "react";
+import { useState, useContext, useEffect, useLayoutEffect } from "react";
 import { UserContext } from "../App";
 import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
@@ -8,6 +8,7 @@ import ArticleContainer from "./ArticleContainer";
 import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
 import LoginContainer from "./LoginContainer";
+import Footer from "../components/Footer";
 
 import Favourites from "../components/Favourites";
 import RegistrationContainer from "./RegistrationContainer";
@@ -115,6 +116,7 @@ const SERVER_URL = "http://localhost:8080"
 
     
     return ( 
+        <>
 
         <BrowserRouter>
         <div>
@@ -216,6 +218,8 @@ const SERVER_URL = "http://localhost:8080"
             </div>
             
         </BrowserRouter>
+        <Footer />
+        </>
 
      );
 }
