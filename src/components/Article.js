@@ -1,17 +1,15 @@
+import { Link } from "react-router-dom";
+
+
+
 const Article = ({article}) => {
+
+    
+
+
     return ( 
         <>
 
-{/* 
-            <div className="products">
-                <h2>{article.title}</h2>
-                <p>{article.content}</p>
-                <p>{article.date}</p>
-                {/* <p>{article.articleslikes}</p> */}
-                {/* <p>{article.numOfLikes}</p> */}
-                {/* <p>{article.comments}</p> */}
-
-            {/* </div>  */}
 
 
             <div className="blog-card spring-fever">
@@ -23,7 +21,12 @@ const Article = ({article}) => {
                 </div>
                 <div className="card-info">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim... 
-                    <a href="#">Read Article<span className="licon icon-arr icon-black"></span></a>
+                    {/* <Link  className="licon icon-arr icon-black" to="/article/articleinfo">Read Article</Link> */}
+                    <Link to="/article/articleinfo">Read Article</Link>
+                    {/* <Link className="linkbutton" to="/">Log Out</Link> */}
+                    {/* <Link className="licon icon-arr icon-black" to={`/articles/${article.id}`}> Read Article </Link> */}
+                    {/* <a href="#">Read Article<span className="licon icon-arr icon-black"></span></a> */}
+
                 </div>
                 <div className="utility-info">
                 <ul className="utility-list">
