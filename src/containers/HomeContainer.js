@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useLayoutEffect } from "react";
+import { useState, useContext, useEffect, useLayoutEffect} from "react";
 import { UserContext } from "../App";
 import { BrowserRouter, Route, Routes, Link, useLocation } from "react-router-dom";
 // import ArticleList from "../components/ArticleList";
@@ -28,7 +28,18 @@ const SERVER_URL = "http://localhost:8080"
     const [signupModal, setSignupModal] = useState(false);
 
     const [user, setUser] = useContext(UserContext);
-   
+       
+
+    useEffect(() => {
+    const fetchData = async() => {
+        const response = await fetch(`${SERVER_URL}/users`, {
+            credentials: "include"
+        })
+        const data = await response.json();
+        setAllAccounts(data);
+    }
+    fetchData()
+        }, [])
 
     useEffect(() => {
         const fetchData = async() => {
@@ -111,67 +122,46 @@ const SERVER_URL = "http://localhost:8080"
         <div>
         
         <div className="navbar">
-
-             <ul>
-             {ifLoggedIn(
-                <li className="homeButton">
-                    <Link className="linkbutton" to="/cycles">Cycles</Link>
-                </li>
-             )}
-
-                {ifLoggedIn(
-                <li className="homeButton">
-                    <Link className="linkbutton" to="/articles">Articles</Link>
-                </li>
-                )}
-
-                {ifLoggedIn(
-                <li className="homeButton">
-                    <Link className="linkbutton" to="/favourites">Favourites</Link>
-                </li>
-                )}
-                    </ul>
-
-
-            <ul>
         
-        {/* <button> */}
-            {ifLoggedOff(
-                
-                 <li className="loginButton"
-                    onClick={() => 
-                        {setLoginModal(true)}}
-                     > Login </li>
-                     )}
+             <ul>
+                {user ? <>
+                    <li className="homeButton">
+                        <Link className="linkbutton" to="/cycles">Cycles</Link>
+                    </li>
 
-                    {loginModal && <LoginContainer setJwt={setJwt} closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
+                     <li className="homeButton">
+                        <Link className="linkbutton" to="/articles">Articles</Link>
+                     </li>
 
-                    {/* </button> */}
-
-                    {/* <button> */}
+                     <li className="homeButton">
+                        <Link className="linkbutton" to="/favourites">Favourites</Link>
+                    </li>
                     
-            {ifLoggedOff(
-                <li className="loginButton" 
-                    onClick={() => 
-                        {setSignupModal(true)}}
-                    > Sign Up </li> 
-                    )}
+                    <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
+                
+                    <li className="homeButton logoutButton" onClick={() => setUser(null)}>
+                        <Link className="linkbutton" to="/">
+                            Log Out
+                        </Link>
+                    </li>
+                </> : 
+                
+                <>
+                    <li className="loginButton" onClick={() => {setLoginModal(true)}}> 
+                    Login 
+                    </li>
+                    {loginModal && <LoginContainer setJwt={setJwt} closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
+                    
+                    <li className="loginButton" onClick={() => {setSignupModal(true)}}> 
+                    Sign Up 
+                    </li>
+                    {signupModal && <RegistrationContainer setJwt={setJwt} closeModal={setSignupModal} postAccount={postAccount}/>} 
+                            
+                </>}
+         
+            </ul>
 
-                     {signupModal && <RegistrationContainer setJwt={setJwt} closeModal={setSignupModal} postAccount={postAccount}/>} 
-
-
-
-            {ifLoggedIn(
-                 <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
-                     )} 
-            
-             {ifLoggedIn(
-                <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
-                    )}
-
-                {/* </button> */}
-                </ul>
-                </div> 
+        </div> 
         
 
         
@@ -195,6 +185,9 @@ const SERVER_URL = "http://localhost:8080"
                     }
                     />
             
+            <Route path="/cycles" element={
+                        <CycleContainer/>}
+                    />
 
             </Routes>
            

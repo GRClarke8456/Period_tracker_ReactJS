@@ -16,8 +16,11 @@ const Article = ({article}) => {
     const postNewComment = (newComment) => {
         fetch(`${SERVER_URL}/comments`, {
             method: "POST",
+            credentials:"include",
+            // mode: "no-cors",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newComment),
+            mode: 'cors'
         })
 
         .then((response) => response.json())
