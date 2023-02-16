@@ -8,6 +8,7 @@ import ArticleContainer from "./ArticleContainer";
 import CycleContainer from "./CycleContainer"; 
 import Settings from "../components/Settings";
 import LoginContainer from "./LoginContainer";
+import Footer from "../components/Footer";
 
 import Favourites from "../components/Favourites";
 import RegistrationContainer from "./RegistrationContainer";
@@ -117,6 +118,7 @@ const SERVER_URL = "http://localhost:8080"
 
     
     return ( 
+        <>
 
         <BrowserRouter>
         <div>
@@ -197,6 +199,7 @@ const SERVER_URL = "http://localhost:8080"
             </div>
             
         </BrowserRouter>
+        </>
 
      );
 }
