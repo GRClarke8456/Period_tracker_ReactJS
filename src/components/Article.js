@@ -64,10 +64,10 @@ const Article = ({article}) => {
       const handleCommentClick = (e) => {
         //checking if element has class name of the icon. if so, user has clicked on it
         if (e.target.classList.contains("close-button")) {
-          // because icon has been clicked on, showCommentForm state set to be opposite of its current value.
+          // because icon has been clicked on, showCommentForm state updated to be opposite of its cu
           setShowCommentForm(!showCommentForm);
         } else {
-          //
+          // if anywhere else is clicked, expanded state 
           setExpanded(!expanded);
         }
       };
@@ -126,6 +126,5 @@ const Article = ({article}) => {
 
      );
 }
-
  
 export default Article;

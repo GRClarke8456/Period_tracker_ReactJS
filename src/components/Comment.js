@@ -1,7 +1,7 @@
 const Comment = ({comment}) => {
     return ( 
         <div>
-            <li>{comment.text} - {comment.user.name}</li>
+            <p>{comment.text} - {comment.user.name}</p>
         </div>
                     // <li>{comment.text} - {ifLoggedIn
                     //(<p>{comment.user.name}</p>)
