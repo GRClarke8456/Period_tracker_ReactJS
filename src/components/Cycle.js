@@ -6,27 +6,27 @@ import { useParams } from "react-router-dom";
 const Cycle = ({cycle, user}) => {
 
 // get users speific cycles
-    const[userCycle, setUserCycle] = useState(false);
+    // const[userCycle, setUserCycle] = useState(false);
 
-    const {id} = useParams();
+    // const {id} = useParams();
 
-    useEffect(() => {
-        if (user) {
-            const userCycle = getUserCycles(id);
-            setUserCycle(userCycle);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (user) {
+    //         const userCycle = getUserCycles(id);
+    //         setUserCycle(userCycle);
+    //     }
+    // }, []);
 
 
-    const getUserCycles = (cycleId) => {
-        let check = false;
-        for (const cycleLiked of user.cycle){
-            if (cycleLiked.id === cycleId) {
-                check = true;
-            }
-        }
-        return check;
-    }
+    // const getUserCycles = (cycleId) => {
+    //     let check = false;
+    //     for (const cycleLiked of user.cycle){
+    //         if (cycleLiked.id === cycleId) {
+    //             check = true;
+    //         }
+    //     }
+    //     return check;
+    // }
 
 
 

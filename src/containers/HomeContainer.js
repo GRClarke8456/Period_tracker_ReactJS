@@ -9,6 +9,7 @@ import CycleContainer from "./CycleContainer";
 import Settings from "../components/Settings";
 import LoginContainer from "./LoginContainer";
 import Footer from "../components/Footer";
+import SpecificCycle from "../components/SpecificCycle";
 
 import Favourites from "../components/Favourites";
 import RegistrationContainer from "./RegistrationContainer";
@@ -32,8 +33,22 @@ const SERVER_URL = "http://localhost:8080"
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
+    const [cycles, setCycles] = useState([])
 
     const [user, setUser] = useContext(UserContext);
+
+    
+    useEffect(() => {
+        const fetchData = async() => {
+            const response = await fetch(`${SERVER_URL}/cycles`, {
+                credentials: "include"
+            })
+            const data = await response.json();
+            setCycles(data);
+            console.log(data);
+        }
+        fetchData()
+            }, []);
        
 
     useEffect(() => {
@@ -235,7 +250,7 @@ const SERVER_URL = "http://localhost:8080"
                         <ArticleContainer filterArticles={filterArticles} articles={filteredArticles ? filteredArticles : articles} />}
                     />
             <Route path="/cycles" element={
-                        <CycleContainer cycles={account.cycles} user={user}/>}
+                        <SpecificCycle  user={user}/>}
                     />
 
 
