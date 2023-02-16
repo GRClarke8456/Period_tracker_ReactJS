@@ -768,3 +768,15 @@ h3:after {
     vertical-align: middle;
     font-size: 10px;
     }
+
+    /* footer */
+    .footer {
+      background-color: rgb(29, 29, 30);
+      color: white;
+      padding-top: 3em;
+      position: relative;
+      bottom:0;
+      width: 100%;
+      margin-top: 730px;
+
+    }

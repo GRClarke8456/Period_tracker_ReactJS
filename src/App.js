@@ -6,6 +6,7 @@ import ArticleContainer from './containers/ArticleContainer';
 import HomeContainer from './containers/HomeContainer';
 import ArticleList from './components/ArticleList';
 // import backgroundmoon from "./backgroundmoon.avif"; 
+import Footer from './components/Footer';
 import { createContext } from 'react';
 import { useState } from 'react';
 import { useLocalState } from './util/useLocalStorage';
@@ -25,6 +26,7 @@ function App() {
     
 
     <HomeContainer />
+    <Footer />
    </UserContext.Provider>
     </>
     

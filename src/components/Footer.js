@@ -1,6 +1,6 @@
 const Footer = () => {
     return ( 
-        <>
+        <div className="footer">
         <hr class="solid"></hr>
         <div className="footer_links">
             
@@ -20,7 +20,7 @@ const Footer = () => {
                 <li href="https://www.instagram.com/">Instagram</li>
             </ul>
         </div>
-        </>
+        </div>
      );
 }
  
