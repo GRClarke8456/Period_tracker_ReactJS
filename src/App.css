@@ -284,16 +284,16 @@ input[type="submit"]:hover {
 
 button {
   
-  background: rgb(0, 0, 0);
+  background: rgb(220, 167, 226);
   border-radius: 25px;
   font-weight: bold;
-  border: 2px solid rgb(0,0,0);
+  border: 2px solid rgb(220, 167, 226);
   color: white;
   cursor: pointer;
   position:relative;
   overflow: hidden;
-  width: 200px;
-  padding: 15px 0;
+  width: 100px;
+  /* padding: 15px 0; */
   text-align: center;
   margin: 20px 10px;
   margin-top: auto;
@@ -721,6 +721,8 @@ h3:after {
 }
 }
 
+
+
 .search {
   text-align: center;
   display: inline-flexbox;
@@ -958,14 +960,25 @@ padding: 20px;
       display: none;
     } */
 
-    .blog-card.expanded {
+     .blog-card.expanded {
       height: 900px;
-    }
+    } 
+
+    /* .spring-fever.expanded {
+      height: 900px;
+    } */
 
     .comment-section {
-      transform: translateY(600px);
-      z-index: 10000;
+      /* transform: translateY(600px); */
+      z-index: 1000000;
 
     }
+
+    .articleComments {
+      z-index: 10000px;
+      color: #020202;
+      transform: translateY(200px);
+      
+    } 
     
 
