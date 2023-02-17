@@ -4,7 +4,7 @@ import Search from "../components/Search";
 
 
 
-const ArticleContainer = ({articles}) => {
+const ArticleContainer = ({articles, filterArticles}) => {
 
 const SERVER_URL = "http://localhost:8080"
 
@@ -30,20 +30,6 @@ const [filteredArticles, setFilteredArticles] = useState();
     //     }
     //     fetchData()
     //         }, [])
-
-            const filterArticles = (searchArtitcleName, searchTags) => {
-                
-                const foundArticlesByName = articles.filter(article => {
-                  return article.title.toLowerCase().includes(searchArtitcleName.toLowerCase())
-                })
-        
-                const foundArticlesByTags = foundArticlesByName.filter(article => {
-                    return article.tag.toLowerCase().includes(searchTags.toLowerCase())
-                })
-            
-        
-                setFilteredArticles(foundArticlesByTags)
-              }
 
 
 

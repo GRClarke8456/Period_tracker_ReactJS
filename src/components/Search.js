@@ -37,8 +37,9 @@ const Search = ({filterArticles}) => {
                 <option value="Young_Girls">Young_Girls</option>
                 <option value="Menopause">Menopause</option>
             </select>
-
-            <input type="submit" value="Search" className="search__submit"/>
+        <button>
+            <input type="submit" value="Search"  />
+            </button>
         </form>
         </>
         

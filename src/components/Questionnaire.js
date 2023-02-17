@@ -33,15 +33,23 @@ const Questionnaire = () => {
 
     return ( 
         <>
+        <div className="quest page">
         <form onSubmit={handleSubmit}>
-            <h2>Please tell us about your last period</h2>
-            <h3> Please input the start date of your last period</h3>
+            <h2 className="quest1">Please tell us about your last period 🩸</h2>
+
+            <hr/>
+
+            <br></br>
+            <h3> Please input the start date of your last period </h3>
             <input
             type="date"
             placeholder="Start Date"
             value={startDate}
             onChange={(event) => setStartDate(event.target.value)}
             />
+
+            <br></br>
+            <br></br>
 
             <h3>Please input the last date of your last period</h3>
             <input
@@ -53,12 +61,21 @@ const Questionnaire = () => {
 
             <button type="submit">OK</button>
 
+            <br></br>
+            <br></br>
+
             <h4>Why is this needed?</h4>
             <p>Our app is designed to help predict your next period.</p>
             <p>But in order to do this, we need to know the last date in order to predict accurately</p>
 
             <a href="/articles">Click here if you do not have periods</a>
+
+           <br></br>
+           <br></br>
+           <br></br>
+
         </form>
+        </div>
         </>
      );
 }

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar,theme } from "antd";
 import dayjs from "dayjs";
+// import calendaricon from '../calendaricon.jpeg';
+
 
 const SpecificCycle = ({cycles, user}) => {
 
@@ -82,21 +84,41 @@ const SpecificCycle = ({cycles, user}) => {
 
     return ( 
     <>
-    <section className="cyclePage">
+    <h3 className="page">Your Cycle</h3>
 
-    <h3>Cycle</h3>
-    <div className="calendarBox">
-        <h2>Cycle History</h2>
+        <a href="#cyclePage" id="btn2">
+            {/* <img src={calendaricon}></img>  */}
+            <img src="https://www.freeiconspng.com/thumbs/calendar-icon-png/calendar-icon-business-3.png" width={60}></img>
+            </a>
+    <br></br>
 
-            <div className="periodKey">
-            <h4>Ovulation day</h4>
-            <h5>The ovulation date is when an egg is released from the ovary and can potentially be fertilised. This is an estimate, calculated 14 days before menstruation. </h5>
+    <div class="period-circle">
+    <div class="period-text">2 days until your period</div>
+    {/* <div class="period-dot"></div> */}
+    </div>
+
+
+
+
+
+    <br></br>
+    <section className="cyclePage" id="cyclePage">
+
+        <h3>Your Calendar</h3>
+
+        
+            {user ? user.cycles.map((cycle) => {
+                return <>
+             <div className="cycleInfo">
+            <p className="startDate">Cycle Information:</p>
+            <p>Start date: {cycle.startDate}</p>
+            <p>End date: {cycle.lastDate}</p>
+            <p>Emotions: {cycle.emotions}</p>
+            <p>Symptoms: {cycle.symptoms}</p>
+            <p>Flow: {cycle.flow}</p>
+            <hr/>
             </div>
-            
-            <div className="periodKey">
-            <h5 className="periodDot">period dot key</h5>    
-            <h5>The period dots represent the days of the period</h5>
-            </div>
+            <div className="calendarBox">
                 <div className="calendar" >
                 {/* <div className="calendar" style={wrapperStyle}> */}
                 {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
@@ -106,40 +128,11 @@ const SpecificCycle = ({cycles, user}) => {
                     />
             </div>  
               
-        </div>
-        <div className="tableHeader">
-        <h2>Symptoms Journal</h2>
-        <h5>About 8 in 10 people say they experience one or more premenstrual symptoms, and about 1 in 10 people experience symptoms significant enough to warrant a clinical diagnosis of PMS, though estimates vary. 
-            Despite being common, scientists still aren’t sure exactly why PMS happens — or why some people have symptoms while others don’t.
-            People may experience different premenstrual symptoms from cycle to cycle, as the presence of symptoms may be affected by diet, exercise, and stress</h5>
-        <div className="cycleInfo">
-        <p>Start date</p>
-        <p>End date</p>
-        <p>Emotions</p>
-        <p>Symptons</p>
-        <p>Flow</p>
-        </div>
-
-        </div>
-            {user ? user.cycles.map((cycle) => {
-                return <>
-                 {/* <p className="startDate">Cycle History:</p> */}
-            <div className="cycleInfo">
-                <p>{cycle.startDate}</p>
-                <p>{cycle.lastDate}</p>
-                <p className="emotions"> {cycle.emotions}</p>
-                <p className="symptons"> {cycle.symptoms}</p>
-                <p className="flow"> {cycle.flow}</p>
-                {/* <hr/> */}
             </div>
-           
+            
             </>
         }):""
         }
-         
-
-      
-            
         </section>
 
 

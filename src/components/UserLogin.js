@@ -26,13 +26,14 @@ const UserLogin = ({closeModal, logInToAnAccount}) => {
         <div className="modalContainer">
             <span onClick={() => closeModal(false)} className="close">&times;  </span>
             <div className="title">
-                <h3>Log in</h3>
+                <h3 className="loginTextnew">Log in</h3>
                 <p className="redfont">{error}</p>
             </div>
             <ul>
+            <form className="login" role="search" onSubmit={handleSubmit}>
 
             <div className="loginText">
-                <form className="login" role="search" onSubmit={handleSubmit}>
+                <div className="inputWrapper">
                     <div className="login_label" htmlFor="login_input">Username:
                     <input 
                         type="text" 
@@ -40,7 +41,9 @@ const UserLogin = ({closeModal, logInToAnAccount}) => {
                         value={userName}
                         onChange={event => setUserName(event.target.value)} />
                         </div>
+                        </div>
 
+                        <div className="inputWrapper">
                     <div className="login_label" htmlFor="login_input">Password:
                     <input 
                         type="password"
@@ -49,11 +52,12 @@ const UserLogin = ({closeModal, logInToAnAccount}) => {
                         onChange={event => setPassword(event.target.value)} />
                     </div>
                     <input type="submit" value="OK" className="okButton"/>
+                    </div>
 
+                    </div>
 
                 </form>
                
-            </div>
             </ul>
             {/* <p>Don't have an account? Click Here to Sign up.</p> */}
 

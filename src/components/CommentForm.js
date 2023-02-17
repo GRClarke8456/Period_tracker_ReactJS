@@ -15,6 +15,7 @@ const CommentForm = ({postNewComment, articleId}) => {
     }
 
     return ( 
+        <div className="comment-form">
         <form onSubmit={handleSubmit}>
             <input 
             type="text"
@@ -23,6 +24,7 @@ const CommentForm = ({postNewComment, articleId}) => {
             value={text} />
             <button type="submit">submit</button>        
             </form>
+        </div>    
      );
 }
  

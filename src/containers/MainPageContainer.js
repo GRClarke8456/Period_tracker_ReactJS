@@ -48,13 +48,24 @@ const MainPageContainer = () => {
                 <img src={moonimage} id="moon" />
                 <img src={mountains_behindimage} id="mountain_behind" />
                 <h2 id="text">MyMoon</h2>
-                <a href="#sec" id="btn">Explore</a>
+                <a href="#sec" id="btn">Find out more</a>
                 <img src={mountains_frontimage} id="mountain_front" />
             </section>
             <div className="sec" id="sec">
-                <h2>Understand the Menstration Cycle Here</h2>
+                <h2>Understand the Menstration Cycle</h2>
 <p>One of the most obvious reasons period education is important for everyone regardless of gender is to gain a scientific understanding of how bodies work. Getting to grips with what the menstrual cycle is and knowing the implications of it. Understanding fertility, pregnancy and periods, will normalise what these are and what they mean. Teaching boys how periods and the menstrual cycle works helps them better understand the importance and practicalities of safe sex and contraception, which could help prevent unwanted pregnancies when they are older.
+</p>
 
+<br></br>
+<p>Your menstrual cycle helps your body prepare for pregnancy every month. It also makes you have a period if you’re not pregnant. Your menstrual cycle and period are controlled by hormones like estrogen and progesterone. Here’s how it all goes down:
+
+You have 2 ovaries, and each one holds a bunch of eggs. The eggs are super tiny — too small to see with the naked eye.
+</p>
+
+<br></br>
+
+<p>
+About halfway through your menstrual cycle, your hormones tell one of your ovaries to release a mature egg — this is called ovulation. Most people don’t feel it when they ovulate, but some ovulation symptoms are bloating, spotting, or a little pain in your lower belly that you may only feel on one side.
 </p>
 
            </div>
