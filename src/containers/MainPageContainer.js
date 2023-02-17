@@ -4,22 +4,32 @@ import mountains_behindimage from "./mountains_behind.png";
 import mountains_frontimage from "./mountains_front.png";
 import moonimage from "./moon.png";
 // import logo from "./logo.png"
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 const MainPageContainer = () => {
     
-     let stars= document.getElementById('stars');
-            let moon= document.getElementById('moon');
-            let mountains_behind= document.getElementById('mountains_behind');
-            let text= document.getElementById('text');
-            let btn= document.getElementById('btn');
-            let mountains_front= document.getElementById('mountains_front');
-            let header = document.querySelector('header');
+            let stars;
+            let moon;
+            let mountains_behind;
+            let text;
+            let btn;
+            let mountains_front;
+            let header;
 
             const handleScroll = () => {
+
+             stars= document.getElementById('stars');
+             moon= document.getElementById('moon');
+             mountains_behind= document.getElementById('mountain_behind');
+             text= document.getElementById('text');
+             btn= document.getElementById('btn');
+             mountains_front= document.getElementById('mountain_front');
+             header = document.querySelector('header');
+
+
                 let value = window.scrollY;
                 stars.style.left = value *0.25 + 'px';
-                console.log(stars);
+                // console.log(stars);
                 moon.style.top = value *1.05 + 'px';
                 mountains_behind.style.top = value *0.5 + 'px';
                 mountains_front.style.top = value *0 + 'px';
@@ -29,7 +39,7 @@ const MainPageContainer = () => {
                 header.style.top = value *0.5 +'px';
             }
 
-            useLayoutEffect(() => {
+            useEffect(() => {
 
             window.addEventListener('scroll', handleScroll)
 

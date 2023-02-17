@@ -41,7 +41,7 @@ const Article = ({article}) => {
           const response = await fetch(`${SERVER_URL}/articles/${article.id}/${user.id}`, {
             method: "PATCH",
             credentials:"include",
-            mode: 'cors'
+            mode: 'cors',
           });
           console.log(response);
           if (response.ok) {

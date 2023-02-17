@@ -1369,8 +1369,9 @@ transform: translateX(-90px);
   background-size: 4500px;
   /* animation-delay: 1s; */
   animation: move-cloudy-mist 10s forwards;
-  z-index: 100
+  z-index: 100;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  pointer-events: none;
 }
 
 @keyframes move-cloudy-mist {
@@ -1398,7 +1399,9 @@ transform: translateX(-90px);
   background-image: url(./containers/cloud.png);
   background-size: 800px;
   animation: move-cloudy-mist2 10s forwards;
-  z-index: 100
+  z-index: 100;
+  pointer-events: none;
+
 }
 
 
@@ -1423,7 +1426,9 @@ transform: translateX(-90px);
   background-image: url(./containers/cloud.png);
   background-size: 500px;
   animation: move-cloudy-mist3 6s forwards;
-  z-index: 100  
+  z-index: 100;
+  pointer-events: none;
+
 }
 
 @keyframes move-cloudy-mist3 {
@@ -1454,7 +1459,9 @@ transform: translateX(-90px);
   background-image: url(./containers/cloud.png);
   background-size: 500px;
   animation: move-cloudy-mist4 8s forwards;
-  z-index: 100
+  z-index: 100;
+  pointer-events: none;
+
 }
 
 @keyframes move-cloudy-mist4 {
@@ -1485,7 +1492,9 @@ transform: translateX(-90px);
   background-image: url(./containers/cloud.png);
   background-size: 500px;
   animation: move-cloudy-mist5 5s forwards;
-  z-index: 100
+  z-index: 100;
+  pointer-events: none;
+
 }
 
 @keyframes move-cloudy-mist5 {
