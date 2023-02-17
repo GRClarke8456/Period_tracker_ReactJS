@@ -42,7 +42,7 @@ const SpecificCycle = ({cycles, user}) => {
 // calendar styling
     const { token } = theme.useToken();
     const wrapperStyle = {
-      width: 700,
+      width: 500,
       border: `1px solid ${token.colorBorderSecondary}`,
       borderRadius: token.borderRadiusLG,
     };
@@ -51,19 +51,29 @@ const SpecificCycle = ({cycles, user}) => {
     const dateCellRender= (date) => {
         let period = false;
         let ovulation = false;
+        let prediction = false;
+        // const startDate = dayjs(cycle.startDate);
+        //     const endDate = dayjs(cycle.lastDate);
         user.cycles.forEach((cycle) =>{
             const startDate = dayjs(cycle.startDate);
+            const endDate = dayjs(cycle.lastDate);
+            const cycleLength = startDate.diff(endDate, 'day', true)
             const ovulationDay = startDate.subtract(14, 'day');
             const ovulationEnd = startDate.subtract(13, 'day');
-            const endDate = dayjs(cycle.lastDate);
-            // const c = endDate(14, 'day')
+            const predictionStart = endDate.add(14, 'day');
+            const predictionEnd = endDate.add(21, 'day');
+            
+            
             if (dayjs(date) > startDate && dayjs(date) < endDate){
                 period = true;
                }
             if (dayjs(date) > ovulationDay && dayjs(date) < ovulationEnd){
                 ovulation = true;
             }
-
+           
+            if (dayjs(date) > predictionStart && dayjs(date) < predictionEnd){
+                prediction = true;
+            }
          })
         if (period) {
          return (
@@ -75,10 +85,16 @@ const SpecificCycle = ({cycles, user}) => {
             return (
             <h5>Ovulation Day</h5>
         )}
-
+        if (prediction){
+            return (
+            <h5 className="predictionDot">Next period</h5>
+        )}
+       
     }
+
     
 
+    
 
     return ( 
     <>
@@ -95,13 +111,14 @@ const SpecificCycle = ({cycles, user}) => {
             
             <div className="periodKey">
             <h5 className="periodDot">period dot key</h5>    
-            <h5>The period dots represent the days of the period</h5>
+            <h5>The red dots represent the days of your period</h5>
+            <h5 className="predictionDot">period dot key</h5>    
+            <h5>The gray dots represent your next period prediction, based off of a typical 28 day cycle</h5>
             </div>
-                <div className="calendar" >
+                <div className="calendar">
                 {/* <div className="calendar" style={wrapperStyle}> */}
                 {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
                     <Calendar 
-                    
                     dateCellRender={dateCellRender} 
                     />
             </div>  
