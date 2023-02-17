@@ -975,9 +975,21 @@ padding: 20px;
     }
 
     .articleComments {
-      z-index: 10000px;
+      z-index: 10000000000000px;
       color: #020202;
       transform: translateY(200px);
+      background-color: rgba(170, 163, 163, 0.95);
+      color: black;
+      padding: 20px;
+      border-radius: 50px;
+      width: 80%;
+      position: relative;
+      border: 1px solid rgb(34, 33, 33);
+      margin: 70px;
+      margin-left: 95px;
+      margin-top: -50px;
+      font-size: 30px;
+      font-weight: bold;
       
     } 
     
@@ -985,12 +997,15 @@ padding: 20px;
 
 
     .comment-section {
-      background-color: #aaa3a3;
+      background-color: rgba(170, 163, 163, 0.95);
       color: black;
       padding: 20px;
-      border-radius: 70px;
+      border-radius: 50px;
       width: 80%;
       position: relative;
+      border: 1px solid rgb(34, 33, 33);
+      margin: 70px;
+      margin-left: 90px;
 
     }
     
