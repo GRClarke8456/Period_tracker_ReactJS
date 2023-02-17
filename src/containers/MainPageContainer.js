@@ -29,7 +29,6 @@ const MainPageContainer = () => {
 
                 let value = window.scrollY;
                 stars.style.left = value *0.25 + 'px';
-                // console.log(stars);
                 moon.style.top = value *1.05 + 'px';
                 mountains_behind.style.top = value *0.5 + 'px';
                 mountains_front.style.top = value *0 + 'px';

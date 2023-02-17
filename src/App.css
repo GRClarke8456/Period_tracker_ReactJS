@@ -20,6 +20,7 @@
 body {
   background: linear-gradient(#2b1055, #7597de);
   height: 100%;
+  /* color: white; */
 
 }
 
@@ -1367,10 +1368,8 @@ transform: translateX(-90px);
   height: 100vh;
   background-image: url(./containers/cloud.png);
   background-size: 4500px;
-  /* animation-delay: 1s; */
   animation: move-cloudy-mist 10s forwards;
   z-index: 100;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   pointer-events: none;
 }
 

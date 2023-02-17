@@ -117,12 +117,17 @@ const SpecificCycle = ({cycles, user}) => {
 
 
 
-    <br></br>
+    {/* <br></br> */}
     <section className="cyclePage" id="cyclePage">
 
-    <h3>Cycle</h3>
+    {/* <h3>Cycle</h3> */}
     <div className="calendarBox">
         <h2>Cycle History</h2>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 
             <div className="periodKey">
             <h4>Ovulation day</h4>

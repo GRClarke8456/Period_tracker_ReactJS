@@ -19,7 +19,7 @@ const Questionnaire = () => {
             credentials: "include"
         }) 
         const savedCycle = await response.json();
-        navigate("/cycles")
+        // navigate("/")
     };
 
     const handleSubmit = (event) => {
@@ -28,7 +28,7 @@ const Questionnaire = () => {
             startDate, lastDate, userId:user.id
         }
         postCycle(postBody);
-        navigate("/cycles")
+        navigate("/articles")
     }
 
     return ( 
