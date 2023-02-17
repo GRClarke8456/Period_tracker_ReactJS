@@ -3,28 +3,19 @@ import { useState, useContext } from "react";
 import CommentForm from "./CommentForm";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-const SERVER_URL = "http://localhost:8080"
-=======
-import ArticleModal from "./ArticleModal";
 
 
 const SERVER_URL = "http://localhost:8080"
 
 
->>>>>>> RimmBranch
 const Article = ({article}) => {
     const [user, setUser] = useContext(UserContext);
     const [comments, setComments] = useState(article.comments)
     const [numOfLikes, setNumOfLikes] = useState(article.numOfLikes);
     const[showCommentForm, setShowCommentForm] = useState(false);
     const [expanded, setExpanded] = useState(false);
-<<<<<<< HEAD
-=======
-    // const [articleModal, setArticleModel] = useState(false);
-    
-    
->>>>>>> RimmBranch
+
+
     const commentComponent = comments.map((comment) => {
     
 
@@ -74,11 +65,8 @@ const Article = ({article}) => {
         }
       };
     return (
-<<<<<<< HEAD
-=======
 
 
->>>>>>> RimmBranch
         <>
          <section >
         <div
