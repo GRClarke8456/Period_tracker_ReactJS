@@ -886,7 +886,7 @@ padding: 20px;
   margin-right: 40px;
 }
 .cycleInfo > p {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(128, 86, 181, 0.8);
   text-align: center;
   padding: 10px;
   font-size: 30px;
@@ -899,6 +899,7 @@ padding: 20px;
 
 .emotions, .symptons, .flow {
   text-transform: lowercase;
+  color: #1e0525;
 }
 
 
