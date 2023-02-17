@@ -44,7 +44,7 @@ const SpecificCycle = ({cycles, user}) => {
 // calendar styling
     const { token } = theme.useToken();
     const wrapperStyle = {
-      width: 700,
+      width: 500,
       border: `1px solid ${token.colorBorderSecondary}`,
       borderRadius: token.borderRadiusLG,
     };
@@ -53,19 +53,29 @@ const SpecificCycle = ({cycles, user}) => {
     const dateCellRender= (date) => {
         let period = false;
         let ovulation = false;
+        let prediction = false;
+        // const startDate = dayjs(cycle.startDate);
+        //     const endDate = dayjs(cycle.lastDate);
         user.cycles.forEach((cycle) =>{
             const startDate = dayjs(cycle.startDate);
+            const endDate = dayjs(cycle.lastDate);
+            const cycleLength = startDate.diff(endDate, 'day', true)
             const ovulationDay = startDate.subtract(14, 'day');
             const ovulationEnd = startDate.subtract(13, 'day');
-            const endDate = dayjs(cycle.lastDate);
-            // const c = endDate(14, 'day')
+            const predictionStart = endDate.add(14, 'day');
+            const predictionEnd = endDate.add(21, 'day');
+            
+            
             if (dayjs(date) > startDate && dayjs(date) < endDate){
                 period = true;
                }
             if (dayjs(date) > ovulationDay && dayjs(date) < ovulationEnd){
                 ovulation = true;
             }
-
+           
+            if (dayjs(date) > predictionStart && dayjs(date) < predictionEnd){
+                prediction = true;
+            }
          })
         if (period) {
          return (
@@ -77,10 +87,16 @@ const SpecificCycle = ({cycles, user}) => {
             return (
             <h5>Ovulation Day</h5>
         )}
-
+        if (prediction){
+            return (
+            <h5 className="predictionDot">Next period</h5>
+        )}
+       
     }
+
     
 
+    
 
     return ( 
     <>
@@ -104,35 +120,62 @@ const SpecificCycle = ({cycles, user}) => {
     <br></br>
     <section className="cyclePage" id="cyclePage">
 
-        <h3>Your Calendar</h3>
+    <h3>Cycle</h3>
+    <div className="calendarBox">
+        <h2>Cycle History</h2>
 
-        
-            {user ? user.cycles.map((cycle) => {
-                return <>
-             <div className="cycleInfo">
-            <p className="startDate">Cycle Information:</p>
-            <p>Start date: {cycle.startDate}</p>
-            <p>End date: {cycle.lastDate}</p>
-            <p>Emotions: {cycle.emotions}</p>
-            <p>Symptoms: {cycle.symptoms}</p>
-            <p>Flow: {cycle.flow}</p>
-            <hr/>
+            <div className="periodKey">
+            <h4>Ovulation day</h4>
+            <h5>The ovulation date is when an egg is released from the ovary and can potentially be fertilised. This is an estimate, calculated 14 days before menstruation. </h5>
             </div>
-            <div className="calendarBox">
+            
+            <div className="periodKey">
+            <h5 className="periodDot">period dot key</h5>    
+            <h5>The red dots represent the days of your period</h5>
+            <h5 className="predictionDot">period dot key</h5>    
+            <h5>The gray dots represent your next period prediction, based off of a typical 28 day cycle</h5>
+            </div>
                 <div className="calendar" >
                 {/* <div className="calendar" style={wrapperStyle}> */}
                 {/*      <Calendar fullscreen={true} onPanelChange={onPanelChange}  */}
                     <Calendar 
-                    
                     dateCellRender={dateCellRender} 
                     />
             </div>  
               
+        </div>
+        <div className="tableHeader">
+        <h2>Symptoms Journal</h2>
+        <h5>About 8 in 10 people say they experience one or more premenstrual symptoms, and about 1 in 10 people experience symptoms significant enough to warrant a clinical diagnosis of PMS, though estimates vary. 
+            Despite being common, scientists still aren’t sure exactly why PMS happens — or why some people have symptoms while others don’t.
+            People may experience different premenstrual symptoms from cycle to cycle, as the presence of symptoms may be affected by diet, exercise, and stress</h5>
+        <div className="cycleInfo">
+        <p>Start date</p>
+        <p>End date</p>
+        <p>Emotions</p>
+        <p>Symptons</p>
+        <p>Flow</p>
+        </div>
+
+        </div>
+            {user ? user.cycles.map((cycle) => {
+                return <>
+                 {/* <p className="startDate">Cycle History:</p> */}
+            <div className="cycleInfo">
+                <p>{cycle.startDate}</p>
+                <p>{cycle.lastDate}</p>
+                <p className="emotions"> {cycle.emotions}</p>
+                <p className="symptons"> {cycle.symptoms}</p>
+                <p className="flow"> {cycle.flow}</p>
+                {/* <hr/> */}
             </div>
-            
+           
             </>
         }):""
         }
+         
+
+      
         </section>
 
 

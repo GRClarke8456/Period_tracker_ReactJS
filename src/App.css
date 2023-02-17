@@ -913,17 +913,32 @@ padding: 20px;
     font-size: 12px;
     list-style: none;
     background-color: #a81c1c;
-    /* border-radius: 5px; */
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     border: 1px solid #a81c1c;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    
+    overflow: hidden;
+
+  }
+  .predictionDot {
+    margin: 10px;
+    padding: 10px;
+    color: #938f8ff1;
+    font-size: 12px;
+    list-style: none;
+    background-color: #938f8ff1;
+    /* border-radius: 5px; */
+    width: 15px;
+    height: 15px;
+    border: 1px solid #938f8ff1;
     border-radius: 0 50% 50% 50%;
     transform: rotate(45deg);
     /* bottom: -50px; */
     /* position: relative; */
     /* left: 17px; */
     overflow: hidden;
-
   }
 .ovulationDay {
   font-size: 15px;
