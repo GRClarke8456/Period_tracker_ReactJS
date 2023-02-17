@@ -19,6 +19,7 @@
 
 body {
   background: linear-gradient(#2b1055, #7597de);
+  height: 100%;
 
 }
 
@@ -32,8 +33,8 @@ body {
 
 }
 
-.bodymain{
-  min-height: 100vh;
+.bodymain .footer-content{
+  min-height: 100%;
   background: linear-gradient(#2b1055, #7597de);
 }
 
@@ -155,6 +156,7 @@ section img#mountains_front {
   position:relative;
   padding: 100px;
   background: #1c0522;
+  text-align: center;
 }
 
 .sec h2 {
@@ -183,10 +185,15 @@ section img#mountains_front {
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 650px;
+  /* width: 2000px; */
+  height: 400px;
   border-radius: 12px;
-  /* background-color: rgb(234, 31, 31); */
-  background-image: url(https://i.pinimg.com/originals/c6/d1/ac/c6d1ac5cf44abc93695e62149b4fc570.gif);
+  /* background-color: rgb(255, 255, 255); */
+  background-image: url(https://cdn5.vectorstock.com/i/1000x1000/51/69/minimalist-hands-and-moon-line-art-symbol-vector-26785169.jpg) ;
+  background-size: 1000px 1000px;
+  background-position: -4cm -5cm;
+  background-repeat: no-repeat; 
+
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
@@ -203,21 +210,28 @@ section img#mountains_front {
   transform: translateX(350px)
 }
 
+.inputWrapper {
+  margin: 50px 0;
+}
+
 
 
 input[type="submit"] {
-  padding: 12px 20px;
+  /* padding: 12px 20px;
   margin-top: 20px;
-  background-color: #020202;
+  
   color: white;
   border: none;
   border-radius: 4px;
+  cursor: pointer; */
+  background: transparent;
+  border: none;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #181818;
-}
+/* input[type="submit"]:hover {
+  background-color: #ef9cdc;
+} */
 
  @-webkit-keyframes animatetop {
   from {top:-200px; opacity:0} 
@@ -231,15 +245,17 @@ input[type="submit"]:hover {
 
 
 .loginText {
-  font-family: 'Zeyada';font-size: 22px;
+  font-family: 'Zeyada';font-size: 42px;
   display: flex;
   align-items: center;
 }
 
+
+
 .login_label {
   font-size: 18px;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 80px;
 }
 
 .login_input {
@@ -271,7 +287,7 @@ input[type="submit"]:hover {
 
 .close:hover,
 .close:focus {
-    color: red;
+    color: #1e0525 ;
     text-decoration: none;
     cursor: pointer;
 }  */
@@ -835,7 +851,7 @@ padding: 20px;
 
 /* cycle calender  */
 .cyclePage {
-  background-color: rgb(169, 74, 98);
+  /* background-color: rgb(58, 22, 31); */
   z-index: 1;
 
 }
@@ -1011,8 +1027,315 @@ padding: 20px;
 
     }
 
+     /* Footer  */
 
+footer {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  right: 0;
+
+  background: #111;
+
+  height: auto;
+
+
+  padding-top: 40px;
+
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+  background-color: #1c0522 ;
+  
+   /* background-color: pink; */
+}
+
+.footer-content h3 {
+  font-size: 2.1rem;
+
+  font-weight: 500;
+
+  text-transform: capitalize;
+
+  line-height: 3rem;
+  color: white;
+}
+
+.footer-content p {
+  max-width: 500px;
+
+  margin: 10px auto;
+
+  line-height: 28px;
+
+  font-size: 14px;
+
+  color: #cacdd2;
+}
+
+.socials {
+  list-style: none;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+
+  color: #fff;
+
+  padding: 5px;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+
+  width: 20px;
+
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+
+  
+
+  padding: 20px;
+
+  padding-bottom: 40px;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  float: left;
+
+  font-size: 14px;
+
+  word-spacing: 2px;
+  color: white;
+}
+
+.footer-bottom p a {
+  color: #ccc;
+
+  font-size: 16px;
+
+  text-decoration: none;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+}
+
+.footer-menu {
+  float: right;
+  color: white;
+}
+
+.footer-menu ul {
+  display: flex;
+}
+
+.footer-menu ul li {
+  padding-right: 10px;
+
+  display: block;
+}
+
+.footer-menu ul li a {
+  color: #cfd2d6;
+
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+  color: #27bcda;
+}
+
+@media (max-width: 500px) {
+  .footer-bottom p {
+    float: none;
+  }
+
+  .footer-menu ul {
+    display: flex;
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+  }
+}
     
 
-    
+.quest {
+  text-align: center;
+
+}
+
+.quest1 {
+  font-size: 80px;
+}
+
+/* PERIOD CYCLE */
+
+.period-circle {
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  border: 4px solid #EAEAEA;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #222;
+  background-color: rgb(225, 90, 90);
+  
+  background-position: 5px 2px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(480px);
+  font-size: 4rem;
+}
+
+.period-circle::after {
+  content: '';
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #EAEAEA;
+}
+
+.period-circle::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: circle(0% at 50% 50%);
+  background-color: #ff8a80;
+  animation-name: period-cycle;
+  animation-duration: 28d;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.period-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.period-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff8a
+}
+
+.calendarButton {
+  background-image: url(https://cdn1.vectorstock.com/i/1000x1000/20/20/calendar-icon-on-a-transparent-background-easy-vector-20762020.jpg);
+}
+
+
+/* calculator button */
+
+.cyclePage {
+  position:relative;
+  padding: 100px;
+  /* background: #1c0522; */
+  text-align: center;
+}
+
+.cyclePage h2 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.cyclePage p {
+  font-size: 1.2em;
+  color: white;
+}
+
+#btn2 {
+  z-index: 9;
+float: right;
+transform: translateX(-90px);
+
+}
+
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+
 

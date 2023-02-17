@@ -3,14 +3,32 @@ import { useState, useContext } from "react";
 import CommentForm from "./CommentForm";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 const SERVER_URL = "http://localhost:8080"
+=======
+import ArticleModal from "./ArticleModal";
+
+
+const SERVER_URL = "http://localhost:8080"
+
+
+>>>>>>> RimmBranch
 const Article = ({article}) => {
     const [user, setUser] = useContext(UserContext);
     const [comments, setComments] = useState(article.comments)
     const [numOfLikes, setNumOfLikes] = useState(article.numOfLikes);
     const[showCommentForm, setShowCommentForm] = useState(false);
     const [expanded, setExpanded] = useState(false);
+<<<<<<< HEAD
+=======
+    // const [articleModal, setArticleModel] = useState(false);
+    
+    
+>>>>>>> RimmBranch
     const commentComponent = comments.map((comment) => {
+    
+
+
         return <Comment key={comment.id} comment={comment} />
     })
     // Post Comment
@@ -56,6 +74,11 @@ const Article = ({article}) => {
         }
       };
     return (
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> RimmBranch
         <>
          <section >
         <div
@@ -70,6 +93,9 @@ const Article = ({article}) => {
           <div className="card-info">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
             <Link onClick={() => setExpanded(true)}> Read Article <span className="licon icon-arr icon-black readArticle"></span> </Link>
+
+          
+
           </div>
           <div className="utility-info">
             <ul className="utility-list">

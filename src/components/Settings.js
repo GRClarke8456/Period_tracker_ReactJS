@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const Settings =({account})=>{
+const Settings =({account, user, updateAccount})=>{
 
     // const navigate = useNavigate();
 
@@ -19,20 +19,20 @@ const Settings =({account})=>{
 
     // const [stateUser, setStateUser] = useState(
     //     {
-    //         name: account.name,
-    //         password: account.password,
-    //         dateOfBirth: dateConverterOld(account.dateOfBirth),
-    //         email: account.email
+    //         name: user.name,
+    //         password: user.password,
+    //         dateOfBirth: dateConverterOld(user.dateOfBirth),
+    //         email: user.email
 
     //     }
     // )
 
     // const [stateUserFinal, setStateUserFinal] = useState(
     //     {
-    //         name: account.name,
-    //         password: account.password,
-    //         dateOfBirth: account.dateOfBirth,
-    //         email: account.email
+    //         name: user.name,
+    //         password: user.password,
+    //         dateOfBirth: user.dateOfBirth,
+    //         email: user.email
 
     //     }
     // )
@@ -57,22 +57,24 @@ const Settings =({account})=>{
     
     // const handleSubmit = (event) => {
     //     event.preventDefault()
-    //     // updateAccount(stateUserFinal)
+    //     updateAccount(stateUserFinal)
     //     navigate("/")
     // }
 
     return (
         <>
             <div className="settingsTitle page">
-                <h3>Settings</h3>
+                <h2>Settings</h2>
             </div>
             {/* <div className="emojiHead">👤</div>  */}
+
+            <br></br>
 
             <ul className="settingpadding">
 
                 <div className="settingsText">
                     <form className="settingsForm" role="search" >
-                    {/* onSubmit={handleSubmit}> */}
+                    {/* onSubmit={handleSubmit} >  */}
 
                         <div className="inputWrapper">
                             <label className="settingslabel" htmlFor="signup_input">Username: </label>
@@ -80,7 +82,7 @@ const Settings =({account})=>{
                                     type="text"
                                     placeholder="Type username here..." 
                                     name= "name" 
-                                    // value={stateUser.name}
+                                    // value={stateUser.username}
                                     // onChange={handleChange}
                                     />
 
@@ -125,8 +127,9 @@ const Settings =({account})=>{
         
                         </div> 
 
-
-                        <input type="submit" value="Save Changes" className="okButton"/>
+                    <button>
+                        <input type="submit" value="Save Changes" />
+                        </button>
 
                     </form>
                 </div>
