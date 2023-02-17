@@ -975,7 +975,7 @@ padding: 20px;
     }
 
     .articleComments {
-      z-index: 10000000000000px;
+      
       color: #020202;
       transform: translateY(200px);
       background-color: rgba(170, 163, 163, 0.95);
@@ -997,6 +997,8 @@ padding: 20px;
 
 
     .comment-section {
+      position: absolute;
+      z-index: 9999;
       background-color: rgba(170, 163, 163, 0.95);
       color: black;
       padding: 20px;
@@ -1008,6 +1010,8 @@ padding: 20px;
       margin-left: 90px;
 
     }
+
+
     
 
     
