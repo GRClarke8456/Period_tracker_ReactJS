@@ -43,12 +43,18 @@ const MainPageContainer = () => {
 
     return ( 
         <>
+        
         <section className="bodymain" >
+          <div className="cloudy-mist-container"></div>
+            <div className="cloudy-mist-container2"></div>
+            <div className="cloudy-mist-container3"></div>
+            <div className="cloudy-mist-container4"></div>
+            <div className="cloudy-mist-container5"></div>
                 <img src={starsimage} id="stars" />
                 <img src={moonimage} id="moon" />
                 <img src={mountains_behindimage} id="mountain_behind" />
                 <h2 id="text">MyMoon</h2>
-                <a href="#sec" id="btn">Find out more</a>
+                <a href="#sec" id="btn">Explore</a>
                 <img src={mountains_frontimage} id="mountain_front" />
             </section>
             <div className="sec" id="sec">

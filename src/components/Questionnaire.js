@@ -35,7 +35,7 @@ const Questionnaire = () => {
         <>
         <div className="quest page">
         <form onSubmit={handleSubmit}>
-            <h2 className="quest1">Please tell us about your last period 🩸</h2>
+            <h2 className="quest1">Please tell us about your last period 💭</h2>
 
             <hr/>
 

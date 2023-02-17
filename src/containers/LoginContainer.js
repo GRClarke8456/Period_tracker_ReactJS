@@ -39,7 +39,7 @@ const LoginContainer = ({closeModal, setJwt}) => {
             if(response.id){
                 closeModal(false)
                 setUser(response)
-                navigate("/articles");
+                navigate("/cycles");
                  
             }
             else {
