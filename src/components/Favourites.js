@@ -63,8 +63,17 @@ const Favourites = ({ articles, isLoggedIn, user, comments, account }) => {
                 </>
             } ) : ""
             }
+            <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br><br></br>
+      <br></br>
+      
         {/* </section> */}
       </div>
+
+      
     );
   }
 

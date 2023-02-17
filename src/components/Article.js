@@ -3,27 +3,27 @@ import { useState, useContext } from "react";
 import CommentForm from "./CommentForm";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
+import ArticleModal from "./ArticleModal";
 
 
 const SERVER_URL = "http://localhost:8080"
 
 
-
 const Article = ({article}) => {
-
     const [user, setUser] = useContext(UserContext);
-
     const [comments, setComments] = useState(article.comments)
     const [numOfLikes, setNumOfLikes] = useState(article.numOfLikes);
-
     const[showCommentForm, setShowCommentForm] = useState(false);
-
     const [expanded, setExpanded] = useState(false);
-
+    // const [articleModal, setArticleModel] = useState(false);
+    
+    
     const commentComponent = comments.map((comment) => {
+    
+
+
         return <Comment key={comment.id} comment={comment} />
     })
-
     // Post Comment
     const postNewComment = (newComment) => {
         fetch(`${SERVER_URL}/comments`, {
@@ -34,16 +34,12 @@ const Article = ({article}) => {
             body: JSON.stringify(newComment),
             mode: 'cors'
         })
-
         .then((response) => response.json())
         .then((response) => {
             setComments([... comments, response]);
         });
     };
-
-
     const handleLikeClick = async () => {
-        
           const response = await fetch(`${SERVER_URL}/articles/${article.id}/${user.id}`, {
             method: "PATCH",
             credentials:"include",
@@ -59,7 +55,6 @@ const Article = ({article}) => {
             console.log(response);
           }
       };
-
       // Event listener to expand the article when the comment icon is clicked
       const handleCommentClick = (e) => {
         //checking if element has class name of the icon. if so, user has clicked on it
@@ -67,13 +62,13 @@ const Article = ({article}) => {
           // because icon has been clicked on, showCommentForm state updated to be opposite of its cu
           setShowCommentForm(!showCommentForm);
         } else {
-          // if anywhere else is clicked, expanded state 
+          // if anywhere else is clicked, expanded state
           setExpanded(!expanded);
         }
       };
+    return (
 
 
-    return ( 
         <>
          <section >
         <div
@@ -88,6 +83,9 @@ const Article = ({article}) => {
           <div className="card-info">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
             <Link onClick={() => setExpanded(true)}> Read Article <span className="licon icon-arr icon-black readArticle"></span> </Link>
+
+          
+
           </div>
           <div className="utility-info">
             <ul className="utility-list">
@@ -121,11 +119,7 @@ const Article = ({article}) => {
           )}
         </div>
     </section>
-
-
         </>
-
      );
 }
- 
 export default Article;

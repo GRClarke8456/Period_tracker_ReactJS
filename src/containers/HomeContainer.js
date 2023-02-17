@@ -35,7 +35,7 @@ const Wrapper = ({children}) => {
 
 
 
-const HomeContainer = ({setJwt, filterArticles}) => {
+const HomeContainer = ({setJwt}) => {
     
 const SERVER_URL = "http://localhost:8080"
 
@@ -101,19 +101,19 @@ const SERVER_URL = "http://localhost:8080"
                 }, [])
 
 
-            // const filterArticles = (searchArtitcleName, searchTags) => {
+            const filterArticles = (searchArtitcleName, searchTags) => {
                 
-            //     const foundArticlesByName = articles.filter(article => {
-            //       return article.title.toLowerCase().includes(searchArtitcleName.toLowerCase())
-            //     })
+                const foundArticlesByName = articles.filter(article => {
+                  return article.title.toLowerCase().includes(searchArtitcleName.toLowerCase())
+                })
         
-            //     const foundArticlesByTags = foundArticlesByName.filter(article => {
-            //         return article.tag.toLowerCase().includes(searchTags.toLowerCase())
-            //     })
+                const foundArticlesByTags = foundArticlesByName.filter(article => {
+                    return article.tag.toLowerCase().includes(searchTags.toLowerCase())
+                })
             
         
-            //     setFilteredArticles(foundArticlesByTags)
-            //   }
+                setFilteredArticles(foundArticlesByTags)
+              }
 
 
     const postAccount = async (newAccount) => {
@@ -218,13 +218,15 @@ const SERVER_URL = "http://localhost:8080"
 
                  <>
                    
-                    <li   onClick={() => {setLoginModal(true)}}> 
-                    Login 
+                    <li  onClick={() => {setLoginModal(true)} }>
+                    <Link className="linkbutton">
+                    Login </Link>
                     </li>
                     {loginModal && <LoginContainer setJwt={setJwt} closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>} 
                     
-                    <li  onClick={() => {setSignupModal(true)}}> 
-                    Sign Up 
+                    <li className="linkbutton" onClick={() => {setSignupModal(true)}}> 
+                    <Link className="linkbutton">
+                    Sign Up </Link>
                     </li>
                     {signupModal && <RegistrationContainer setJwt={setJwt} closeModal={setSignupModal} postAccount={postAccount}/>} 
                             
@@ -248,7 +250,7 @@ const SERVER_URL = "http://localhost:8080"
 
 
             <Route path="/settings" element={
-                        <Settings />}
+                        <Settings user={user} updateAccount={updateAccount}/>}
                     />
             
             <Route path="/articles" element={

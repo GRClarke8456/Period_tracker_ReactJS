@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar,theme } from "antd";
 import dayjs from "dayjs";
+// import calendaricon from '../calendaricon.jpeg';
+
 
 const SpecificCycle = ({cycles, user}) => {
 
@@ -84,7 +86,28 @@ const SpecificCycle = ({cycles, user}) => {
 
     return ( <>
     <h3 className="page">Your Cycle</h3>
-    <section className="cyclePage">
+
+        <a href="#cyclePage" id="btn2">
+            {/* <img src={calendaricon}></img>  */}
+            <img src="https://www.freeiconspng.com/thumbs/calendar-icon-png/calendar-icon-business-3.png" width={60}></img>
+            </a>
+    <br></br>
+
+    <div class="period-circle">
+  <div class="period-text">2 days until your period</div>
+  {/* <div class="period-dot"></div> */}
+</div>
+
+
+
+
+
+<br></br>
+    <section className="cyclePage" id="cyclePage">
+
+        <h3>Your Calendar</h3>
+
+        
             {user ? user.cycles.map((cycle) => {
                 return <>
             <div className="cycleInfo">
